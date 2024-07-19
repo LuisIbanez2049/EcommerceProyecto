@@ -1,0 +1,25 @@
+
+label{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.inputs{
+    padding: 12px;
+    font-size: 25px;
+    background-color: aquamarine;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+form[data-contenedorFrom]{
+    box-shadow: 1px 1px 33px black;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);;
+}
+
+div[data-contenedorFormulario]{
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+h1[data-h1]{
+    text-shadow: 1px 2px 8px rgb(255, 255, 255);
+}
