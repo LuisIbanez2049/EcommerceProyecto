@@ -1,0 +1,302 @@
+[
+    {
+        "ID": 1,
+        "Marca": "Dell",
+        "Tipo de Producto": "Laptop",
+        "Modelo": "Inspiron 15",
+        "Detalles": "15.6\" FHD, i5, 8GB RAM, 256GB SSD",
+        "URL de Foto": "https://example.com/dell-inspiron15.jpg",
+        "Precio (ARS)": 150000,
+        "Stock": 3
+    },
+    {
+        "ID": 2,
+        "Marca": "HP",
+        "Tipo de Producto": "Laptop",
+        "Modelo": "Pavilion 14",
+        "Detalles": "14\" HD, Ryzen 5, 8GB RAM, 512GB SSD",
+        "URL de Foto": "https://example.com/hp-pavilion14.jpg",
+        "Precio (ARS)": 140000,
+        "Stock": 5
+    },
+    {
+        "ID": 3,
+        "Marca": "Lenovo",
+        "Tipo de Producto": "Laptop",
+        "Modelo": "IdeaPad 3",
+        "Detalles": "15.6\" FHD, i7, 16GB RAM, 512GB SSD",
+        "URL de Foto": "https://example.com/lenovo-ideapad3.jpg",
+        "Precio (ARS)": 160000,
+        "Stock": 8
+    },
+    {
+        "ID": 4,
+        "Marca": "Asus",
+        "Tipo de Producto": "Laptop",
+        "Modelo": "ZenBook 13",
+        "Detalles": "13.3\" OLED, Ryzen 7, 16GB RAM, 1TB SSD",
+        "URL de Foto": "https://example.com/asus-zenbook13.jpg",
+        "Precio (ARS)": 180000,
+        "Stock": 2
+    },
+    {
+        "ID": 5,
+        "Marca": "Acer",
+        "Tipo de Producto": "Laptop",
+        "Modelo": "Swift 3",
+        "Detalles": "14\" FHD, i5, 8GB RAM, 256GB SSD",
+        "URL de Foto": "https://example.com/acer-swift3.jpg",
+        "Precio (ARS)": 145000,
+        "Stock": 6
+    },
+    {
+        "ID": 6,
+        "Marca": "MSI",
+        "Tipo de Producto": "Laptop",
+        "Modelo": "GF63 Thin",
+        "Detalles": "15.6\" FHD, i7, 16GB RAM, 512GB SSD",
+        "URL de Foto": "https://example.com/msi-gf63-thin.jpg",
+        "Precio (ARS)": 170000,
+        "Stock": 4
+    },
+    {
+        "ID": 7,
+        "Marca": "HP",
+        "Tipo de Producto": "Monitor",
+        "Modelo": "Pavilion 27",
+        "Detalles": "27\" QHD, IPS, 75Hz",
+        "URL de Foto": "https://example.com/hp-pavilion27.jpg",
+        "Precio (ARS)": 70000,
+        "Stock": 10
+    },
+    {
+        "ID": 8,
+        "Marca": "Samsung",
+        "Tipo de Producto": "Monitor",
+        "Modelo": "Odyssey G5",
+        "Detalles": "27\" QHD, 144Hz, Curved",
+        "URL de Foto": "https://example.com/samsung-odyssey-g5.jpg",
+        "Precio (ARS)": 80000,
+        "Stock": 3
+    },
+    {
+        "ID": 9,
+        "Marca": "LG",
+        "Tipo de Producto": "Monitor",
+        "Modelo": "UltraGear 27GL850",
+        "Detalles": "27\" QHD, 144Hz, Nano IPS",
+        "URL de Foto": "https://example.com/lg-ultragear27gl850.jpg",
+        "Precio (ARS)": 75000,
+        "Stock": 12
+    },
+    {
+        "ID": 10,
+        "Marca": "Asus",
+        "Tipo de Producto": "Monitor",
+        "Modelo": "VG248QE",
+        "Detalles": "24\" FHD, 144Hz, 1ms",
+        "URL de Foto": "https://example.com/asus-vg248qe.jpg",
+        "Precio (ARS)": 50000,
+        "Stock": 7
+    },
+    {
+        "ID": 11,
+        "Marca": "BenQ",
+        "Tipo de Producto": "Monitor",
+        "Modelo": "Zowie XL2411P",
+        "Detalles": "24\" FHD, 144Hz, 1ms",
+        "URL de Foto": "https://example.com/benq-zowie-xl2411p.jpg",
+        "Precio (ARS)": 55000,
+        "Stock": 5
+    },
+    {
+        "ID": 12,
+        "Marca": "ViewSonic",
+        "Tipo de Producto": "Monitor",
+        "Modelo": "VX3276-2K-MHD",
+        "Detalles": "32\" QHD, IPS, 75Hz",
+        "URL de Foto": "https://example.com/viewsonic-vx3276-2k-mhd.jpg",
+        "Precio (ARS)": 65000,
+        "Stock": 9
+    },
+    {
+        "ID": 13,
+        "Marca": "Corsair",
+        "Tipo de Producto": "Teclado Mecánico",
+        "Modelo": "K95 RGB Platinum",
+        "Detalles": "Cherry MX Speed, RGB Lighting",
+        "URL de Foto": "https://example.com/corsair-k95-rgb.jpg",
+        "Precio (ARS)": 25000,
+        "Stock": 15
+    },
+    {
+        "ID": 14,
+        "Marca": "Razer",
+        "Tipo de Producto": "Teclado Mecánico",
+        "Modelo": "BlackWidow Elite",
+        "Detalles": "Green Switch, RGB Lighting",
+        "URL de Foto": "https://example.com/razer-blackwidow-elite.jpg",
+        "Precio (ARS)": 23000,
+        "Stock": 8
+    },
+    {
+        "ID": 15,
+        "Marca": "Logitech",
+        "Tipo de Producto": "Teclado Mecánico",
+        "Modelo": "G Pro X",
+        "Detalles": "Customizable Switches, RGB Lighting",
+        "URL de Foto": "https://example.com/logitech-g-pro-x.jpg",
+        "Precio (ARS)": 22000,
+        "Stock": 7
+    },
+    {
+        "ID": 16,
+        "Marca": "HyperX",
+        "Tipo de Producto": "Teclado Mecánico",
+        "Modelo": "Alloy FPS Pro",
+        "Detalles": "Red Switch, Compact Design",
+        "URL de Foto": "https://example.com/hyperx-alloy-fps-pro.jpg",
+        "Precio (ARS)": 20000,
+        "Stock": 6
+    },
+    {
+        "ID": 17,
+        "Marca": "SteelSeries",
+        "Tipo de Producto": "Teclado Mecánico",
+        "Modelo": "Apex Pro",
+        "Detalles": "Adjustable Mechanical Switches, RGB",
+        "URL de Foto": "https://example.com/steelseries-apex-pro.jpg",
+        "Precio (ARS)": 27000,
+        "Stock": 4
+    },
+    {
+        "ID": 18,
+        "Marca": "Asus",
+        "Tipo de Producto": "Teclado Mecánico",
+        "Modelo": "ROG Strix Scope",
+        "Detalles": "Cherry MX Red, RGB Lighting",
+        "URL de Foto": "https://example.com/asus-rog-strix-scope.jpg",
+        "Precio (ARS)": 24000,
+        "Stock": 10
+    },
+    {
+        "ID": 19,
+        "Marca": "Logitech",
+        "Tipo de Producto": "Mouse",
+        "Modelo": "G502 HERO",
+        "Detalles": "25K DPI, RGB Lighting",
+        "URL de Foto": "https://example.com/logitech-g502-hero.jpg",
+        "Precio (ARS)": 9500,
+        "Stock": 3
+    },
+    {
+        "ID": 20,
+        "Marca": "Razer",
+        "Tipo de Producto": "Mouse",
+        "Modelo": "DeathAdder Elite",
+        "Detalles": "16K DPI, RGB Lighting",
+        "URL de Foto": "https://example.com/razer-deathadder-elite.jpg",
+        "Precio (ARS)": 9500,
+        "Stock": 4
+    },
+    {
+        "ID": 21,
+        "Marca": "Corsair",
+        "Tipo de Producto": "Mouse",
+        "Modelo": "M65 RGB Elite",
+        "Detalles": "18K DPI, RGB Lighting",
+        "URL de Foto": "https://example.com/corsair-m65-rgb-elite.jpg",
+        "Precio (ARS)": 11000,
+        "Stock": 5
+    },
+    {
+        "ID": 22,
+        "Marca": "SteelSeries",
+        "Tipo de Producto": "Mouse",
+        "Modelo": "Rival 600",
+        "Detalles": "12K DPI, Dual Sensor System",
+        "URL de Foto": "https://example.com/steelseries-rival-600.jpg",
+        "Precio (ARS)": 12500,
+        "Stock": 6
+    },
+    {
+        "ID": 23,
+        "Marca": "HyperX",
+        "Tipo de Producto": "Mouse",
+        "Modelo": "Pulsefire FPS Pro",
+        "Detalles": "16K DPI, RGB Lighting",
+        "URL de Foto": "https://example.com/hyperx-pulsefire-fps-pro.jpg",
+        "Precio (ARS)": 8500,
+        "Stock": 7
+    },
+    {
+        "ID": 24,
+        "Marca": "Asus",
+        "Tipo de Producto": "Mouse",
+        "Modelo": "ROG Gladius II",
+        "Detalles": "12K DPI, RGB Lighting",
+        "URL de Foto": "https://example.com/asus-rog-gladius-ii.jpg",
+        "Precio (ARS)": 10500,
+        "Stock": 8
+    },
+    {
+        "ID": 25,
+        "Marca": "Kingston",
+        "Tipo de Producto": "Memoria RAM",
+        "Modelo": "HyperX Fury 16GB",
+        "Detalles": "16GB DDR4, 3200MHz",
+        "URL de Foto": "https://example.com/kingston-hyperx-fury-16gb.jpg",
+        "Precio (ARS)": 15000,
+        "Stock": 10
+    },
+    {
+        "ID": 26,
+        "Marca": "Corsair",
+        "Tipo de Producto": "Memoria RAM",
+        "Modelo": "Vengeance LPX 16GB",
+        "Detalles": "16GB DDR4, 3200MHz",
+        "URL de Foto": "https://example.com/corsair-vengeance-lpx-16gb.jpg",
+        "Precio (ARS)": 15500,
+        "Stock": 12
+    },
+    {
+        "ID": 27,
+        "Marca": "G.Skill",
+        "Tipo de Producto": "Memoria RAM",
+        "Modelo": "Trident Z RGB 16GB",
+        "Detalles": "16GB DDR4, 3200MHz",
+        "URL de Foto": "https://example.com/gskill-tridentz-rgb-16gb.jpg",
+        "Precio (ARS)": 16500,
+        "Stock": 8
+    },
+    {
+        "ID": 28,
+        "Marca": "Crucial",
+        "Tipo de Producto": "Memoria RAM",
+        "Modelo": "Ballistix 16GB",
+        "Detalles": "16GB DDR4, 3200MHz",
+        "URL de Foto": "https://example.com/crucial-ballistix-16gb.jpg",
+        "Precio (ARS)": 16000,
+        "Stock": 9
+    },
+    {
+        "ID": 29,
+        "Marca": "Adata",
+        "Tipo de Producto": "Memoria RAM",
+        "Modelo": "XPG Spectrix D60G 16GB",
+        "Detalles": "16GB DDR4, 3200MHz",
+        "URL de Foto": "https://example.com/adata-xpg-spectrix-16gb.jpg",
+        "Precio (ARS)": 17000,
+        "Stock": 5
+    },
+    {
+        "ID": 30,
+        "Marca": "Samsung",
+        "Tipo de Producto": "Memoria RAM",
+        "Modelo": "16GB DDR4",
+        "Detalles": "16GB DDR4, 3200MHz",
+        "URL de Foto": "https://example.com/samsung-16gb-ddr4.jpg",
+        "Precio (ARS)": 14500,
+        "Stock": 7
+    }
+]
