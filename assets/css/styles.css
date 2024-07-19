@@ -1,0 +1,62 @@
+.navigation {
+    display: none; /* Ocultar el menú inicialmente */
+    flex-direction: column; /* Para que los enlaces se desplieguen verticalmente */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation.show {
+    display: flex; /* Mostrar el menú cuando tenga la clase 'show' */
+}
+
+.navigation li {
+    display: block;
+    text-align: center;
+}
+
+.navigation a {
+    display: block;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#menu::before {
+    content: "≡";
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Opcional: cambiar el ícono cuando se muestra el menú */
+#menu.show::before {
+    content: "✖"; /* Ícono de cerrar */
+}
+
+
+/* Estilo del carrusel */
+.carousel {
+    position: relative;
+    width: 100vw;
+    height: 55vw;
+    overflow: hidden;
+    display: block;
+}
+
+.carousel-image {
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 25vw;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image:not(:first-child) {
+    opacity: 0;
+}
+
+.carousel {
+    background-color: var(--amarillo);
+}
