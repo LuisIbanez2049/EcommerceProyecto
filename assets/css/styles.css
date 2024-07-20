@@ -1,13 +1,13 @@
-.navigation {
-    /*display: none; Ocultar el menú inicialmente */
-    flex-direction: column; /* Para que los enlaces se desplieguen verticalmente */
+/* .navigation {
+    display: none; Ocultar el menú inicialmente
+    flex-direction: column; 
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
 .navigation.show {
-    display: flex; /* Mostrar el menú cuando tenga la clase 'show' */
+    display: flex; 
 }
 
 .navigation li {
@@ -29,12 +29,13 @@
     cursor: pointer;
 }
 
-/* Opcional: cambiar el ícono cuando se muestra el menú */
 #menu.show::before {
-    content: "✖"; /* Ícono de cerrar */
+    content: "✖"; 
+}*/ 
+
+.nav {
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
 }
-
-
 /* Estilo del carrusel */
 .carousel {
     position: relative;
