@@ -12,36 +12,32 @@
 
 <body class="w-screen">
     <header>
-        <section class="nav bg-gray-800 flex items-center p-4 gap-2 justify-between">
-            <img class="w-20 bg-white rounded-2xl" src="../assets/images/logo.gif" alt="logo" />
-            <div class="relative text-gray-600 items-center pl-4">
-                <input type="text" placeholder="Search..." class="w-25 px-4 py-2 rounded-full pl-10" />
-                <span class="absolute inset-y-0 left-3 flex items-center pl-3">
-                    <i class="fas fa-magnifying-glass text-gray-400"></i>
-                </span>
-            </div>
-            <a href="../index.html">
-                <i class="fa fa-shopping-cart" style="color: #ffffff"></i>
-            </a>
-
-            <a id="menu" href="#"></a>
-            <nav class="nav flex items-center text-white w-40 ml-10 gap-4">
-                <ul class="navigation">
-                    <li>
-                        <a href="../index.html" class="btn px-4 py-2 bg-blue-500 text-white rounded w-20">Home</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/about.html"
-                            class="btn px-4 py-2 bg-blue-500 text-white rounded w-20">About</a>
-                    </li>
-
-                    <li>
-                        <a href="../pages/contact.html"
-                            class="btn px-4 py-2 bg-blue-500 text-white rounded w-20">Contact</a>
-                    </li>
-                </ul>
+        <section class="nav flex items-center p-1 gap-2 justify-between">
+            <a href="#">
+                <img class="w-16 bg-white rounded-full border-white border-2 ml-10 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl "
+                    src="../assets/images/logo.gif" alt="logo"></a>
+    
+            <nav class="navLinks items-center text-white ml-20 flex gap-14">
+                <a href="../index.html"
+                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">HOME</a>
+    
+                <a href="./pages/contact.html"
+                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">PRODUCTS</a>
+    
+                <a href="#"
+                    class="btn current bg-[#000851] rounded-full shadow-2xl px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">ABOUT</a>
+    
+                <a href="../pages/contact.html"
+                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">CONTACT</a>
             </nav>
+    
+            <div class="relative w-25 flex items-center mr-10">
+                <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-full pl-10">
+                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-white pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </span>
+                <i class="fa fa-shopping-cart text-white text-xl pl-3"></i>
+            </div>
         </section>
     </header>
     <main class="flex flex-col justify-center items-center gap-5 w-screen">
@@ -99,6 +95,9 @@
                 <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-viewsonic.svg"
                     alt="marca ViewSonic">
             </div>
+        </div>
+        <div class="">
+
         </div>
         <article
             class="flex flex-col gap-2 justify-evenly border-4 border-black border-solid bg-gradient-to-r from-blue-400 to-indigo-700 w-[230px] h-[400px] px-2 py-2 rounded text-ellipsis">
