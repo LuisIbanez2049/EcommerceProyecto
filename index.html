@@ -6,20 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="icon" type="image/png" href="./assets/images/favicon.jpg">
 </head>
 
-<header>
+<!-- <header>
     <div id="nav-placeholder"></div>
+</header> -->
+
+<header>
+    <section class="nav flex items-center p-1 gap-2 justify-between">
+        <a href="#">
+            <img class="w-16 bg-white rounded-full border-white border-2 ml-10 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl "
+                src="../assets/images/logo.gif" alt="logo"></a>
+
+        <nav class="navLinks items-center text-white ml-20 flex gap-14">
+            <a href="#" class="btn current bg-[#000851] rounded-full shadow-2xl px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">HOME</a>
+
+            <a href="./pages/contact.html" class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">PRODUCTS</a>
+
+            <a href="./pages/about.html" class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">ABOUT</a>
+
+            <a href="./pages/contact.html" class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">CONTACT</a>
+        </nav>
+
+        <div class="relative w-25 flex items-center mr-10">
+            <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-full pl-10">
+            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-white pointer-events-none">
+                <i class="fas fa-search text-gray-400"></i>
+            </span>
+            <i class="fa fa-shopping-cart text-white text-xl pl-3"></i>
+        </div>
+    </section>
 </header>
 
 <body>
     <div class="carousel">
-        <img class="carousel-image" src="../assets/images/Sin título.jpg" alt="Imagen 1 de carousel">
-        <img class="carousel-image" src="../assets/images/nueva.jpg" alt="Imagen 2 de carousel">
-        <img class="carousel-image" src="../assets/images/otra.jpg" alt="Imagen 3 de carousel">
-        <img class="carousel-image" src="../assets/images/programas-crear-banners.jpg" alt="Imagen 4 de carousel">
+        <img class="carousel-image" src="./assets/images/Sin título.jpg" alt="Imagen 1 de carousel">
+        <img class="carousel-image" src="./assets/images/nueva.jpg" alt="Imagen 2 de carousel">
+        <img class="carousel-image" src="./assets/images/otra.jpg" alt="Imagen 3 de carousel">
+        <img class="carousel-image" src="./assets/images/programas-crear-banners.jpg" alt="Imagen 4 de carousel">
     </div>
 
     <footer class="flex flex-wrap justify-around pt-5">
@@ -69,7 +96,8 @@
         </div>
 
     </footer>
-    <script src="./assets/js/nav.js"></script>
+
+    <script src="./assets/js/index.js"></script>
 
 </body>
 
