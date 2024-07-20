@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.jpg" />
+    <title>Tech Store</title>
+</head>
+
+<body class="w-screen">
+    <header>
+        <section class="nav bg-gray-800 flex items-center p-4 gap-2 justify-between">
+            <img class="w-20 bg-white rounded-2xl" src="../assets/images/logo.gif" alt="logo" />
+            <div class="relative text-gray-600 items-center pl-4">
+                <input type="text" placeholder="Search..." class="w-25 px-4 py-2 rounded-full pl-10" />
+                <span class="absolute inset-y-0 left-3 flex items-center pl-3">
+                    <i class="fas fa-magnifying-glass text-gray-400"></i>
+                </span>
+            </div>
+            <a href="../index.html">
+                <i class="fa fa-shopping-cart" style="color: #ffffff"></i>
+            </a>
+
+            <a id="menu" href="#"></a>
+            <nav class="nav flex items-center text-white w-40 ml-10 gap-4">
+                <ul class="navigation">
+                    <li>
+                        <a href="../index.html" class="btn px-4 py-2 bg-blue-500 text-white rounded w-20">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="../pages/about.html"
+                            class="btn px-4 py-2 bg-blue-500 text-white rounded w-20">About</a>
+                    </li>
+
+                    <li>
+                        <a href="../pages/contact.html"
+                            class="btn px-4 py-2 bg-blue-500 text-white rounded w-20">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <main class="flex flex-col justify-center items-center gap-5 w-screen">
+        <div class="carousel w-full">
+            <img class="carousel-image" src="/assets/images/Sin título.jpg" alt="Imagen 1 de carousel" />
+            <img class="carousel-image" src="/assets/images/nueva.jpg" alt="Imagen 2 de carousel" />
+            <img class="carousel-image" src="/assets/images/otra.jpg" alt="Imagen 3 de carousel" />
+            <img class="carousel-image" src="/assets/images/programas-crear-banners.jpg" alt="Imagen 4 de carousel" />
+        </div>
+        <div class="flex justify-center flex-col">
+            <h3>THE BEST BRANDS ARE AT TECH STORE!</h3>
+            <div class="flex justify-center gap-5">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-acer.svg"
+                    alt="marca Acer">
+                <img class="border border-black w-28 h-28 rounded-full object-contain" src="/assets/images/marca-adata.svg"
+                    alt="marca Adata">
+                <img class="border border-black w-28 h-28 rounded-full" src="/assets/images/marca-Asus.jpg"
+                    alt="marca Asus">
+                <img class="border border-black w-28 h-28 rounded-full object-contain" src="/assets/images/marca-benq.svg"
+                    alt="marca Benq">
+                <img class="border border-black w-28 h-28 rounded-full object-contain" src="/assets/images/marca-corsair.jpg"
+                    alt="marca Corsair">
+            </div>
+            <div class="flex justify-center gap-5">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-Crucial.jpg"
+                    alt="marca Crucial">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-dell.svg"
+                    alt="marca Dell">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-gskill.svg"
+                    alt="marca G.Skill">
+                <img class="border border-black w-28 h-28 rounded-full object-cover"
+                    src="/assets/images/marca-hiperX.jpg" alt="marca HyperX">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-hp.svg"
+                    alt="marca HP">
+            </div>
+            <div class="flex justify-center gap-5">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-Kingston.jpg"
+                    alt="marca Kingston">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-Lenovo.jpg"
+                    alt="marca Lenovo">
+                <img class="border border-black w-28 h-28 rounded-full object-cover" src="/assets/images/marca-LG.jpg"
+                    alt="marca LG">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-Logitech.jpg"
+                    alt="marca Logitech">
+                <img class="border border-black w-28 h-28 rounded-full object-cover" src="/assets/images/marca-msi.jpg"
+                    alt="marca MSI">
+            </div>
+            <div class="flex justify-center gap-5">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-razer.jpg"
+                    alt="marca Razer">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-Samsung.jpg"
+                    alt="marca Samsung">
+                <img class="border border-black w-28 h-28 rounded-full" src="/assets/images/marca-SteelSeries.jpg"
+                    alt="marca SteelSeries">
+                <img class="border border-black w-28 h-28 rounded-full " src="/assets/images/marca-viewsonic.svg"
+                    alt="marca ViewSonic">
+            </div>
+        </div>
+        <article
+            class="flex flex-col gap-2 justify-evenly border-4 border-black border-solid bg-gradient-to-r from-blue-400 to-indigo-700 w-[230px] h-[400px] px-2 py-2 rounded text-ellipsis">
+            <img class="w-[220px] h-1/2 rounded mb-2 border-4 border-black border-solid" src="Memoria-RAM.webp"
+                alt="memoria" />
+            <hr class="border" />
+            <span class="font-bold pl-2 text-2xl mt-4 text-white">$100.000</span>
+            <span class="px-2 mb-4 text-white">Kingston Fury Beast DDR4 RGB KF432C16BBA/16 1 16 GB - Negro -
+                RGB</span>
+        </article>
+    </main>
+    <footer class="flex flex-wrap justify-around pt-5">
+        <div class="flex items-center justify-center w-[200px] h-[200px]">
+            <img class="logo w-36 h-36" src="../assets/images/footer/logo-techStore.gif" alt="logo techStore" />
+        </div>
+        <div class="flex flex-col gap-2 items-start">
+            <button>Categories</button>
+            <button>Notebooks</button>
+            <button>Assembled PC and Mini PC</button>
+            <button>PC Components</button>
+            <button>Combo Update and mother</button>
+            <button>Monitors</button>
+            <button>PC peripherals</button>
+        </div>
+        <div class="flex flex-col gap-2 items-start">
+            <button>Headphones</button>
+            <button>Microphones</button>
+        </div>
+        <div class="flex flex-col gap-2 items-start">
+            <button>Links of interest</button>
+            <button>HyperX Zone</button>
+        </div>
+        <div>
+            <div class="flex gap-2">
+                <img class="w-10 h-10" src="../assets/images/footer/logo-facebook.png" alt="logo facebook" />
+                <img class="w-10 h-10" src="../assets/images/footer/logo-instagram.png" alt="logo instagram" />
+                <img class="w-10 h-10" src="../assets/images/footer/logo-youtube.png" alt="logo youtube" />
+            </div>
+            <div class="flex flex-col gap-2">
+                <p><a href="tel:+(011) 4551-7090">Tel: (011) 4551-7090</a></p>
+                <p><a href="mailto:info@techStore.com">info@techStore.com</a></p>
+                <p>Av. Forest 365 C.ABA Capital Federal</p>
+            </div>
+        </div>
+        <div class="flex flex-col w-11/12 h-16 mt-5">
+            <div class="border-t-2 border-white flex justify-between w-full h-14">
+                <button>Powered by Mercado Shops</button>
+                <button>Legal notices</button>
+                <button>How to buy?</button>
+                <button>How do we protect your privacy?</button>
+                <button>Protected purchase</button>
+                <button>Configure cookies</button>
+                <img class="w-10 h-14 pt-1" src="../assets/images/footer/logo-dataFiscal.jpg" alt="logo data fiscal" />
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/nav.js"></script>
+</body>
+
+</html>
