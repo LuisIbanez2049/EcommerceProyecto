@@ -62,7 +62,7 @@
     background-color: var(--amarillo);
 }
 
-footer {
+footer, .divButton {
     background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
     color: white;
 }
@@ -173,6 +173,9 @@ body {
     font-size: calc(var(--base-font-size) + 1vw);
 }
 
+.selectedBrand {
+    border: 10px solid rgb(27, 10, 182); /* Cambia esto según tu esquema de colores */
+}
 
 .prev,
 .next {
