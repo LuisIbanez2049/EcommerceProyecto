@@ -51,7 +51,7 @@
     width: 100vw;
     height: 25vw;
     object-fit: cover;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
 }
 
 .carousel-image:not(:first-child) {
@@ -112,4 +112,92 @@ body {
     width: 100%;
     overflow-x:hidden
     
+}
+
+.animacion {
+    text-align: center; 
+    animation: fadeInLeftBig 5s infinite;
+    font-size: 7vh; 
+}
+
+@keyframes fadeInLeftBig {
+    from {
+    opacity: 0;
+    transform: translateX(-100px);
+    }
+    to {
+    opacity: 1;
+    transform: translateX(0);
+    font-size: 8vh;
+    text-shadow: #000000a5 1px 0 10px;
+}
+}
+
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--naranja);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex: 2; */
+
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+    
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.slide img {
+    margin: 0;
+    /* font-size: 24px; */
+    color: #333;
+    font-size: calc(var(--base-font-size) + 1vw);
+}
+
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: transparent;
+    color: #000000;
 }
