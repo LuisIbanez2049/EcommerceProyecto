@@ -25,7 +25,7 @@ const products = [
         "Tipo de Producto": "Laptop",
         "Modelo": "IdeaPad 3",
         "Detalles": "15.6\" FHD, i7, 16GB RAM, 512GB SSD",
-        "URL de Foto": "https://www.lenovo.com/ar/es/p/notebooks/ideapad/ideapad-3/ideapad-3-14are05/88ips301431",
+        "URL de Foto": "https://p4-ofp.static.pub/fes/cms/2022/12/05/fokjguy2ergos4cz5ayyu76ugonz1n316370.png",
         "Precio (ARS)": 160000,
         "Stock": 8
     },
