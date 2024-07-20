@@ -10,7 +10,6 @@
     <link rel="icon" type="image/png" href="../assets/images/favicon.jpg" />
     <title>Tech Store</title>
 </head>
-
 <body class="w-screen">
     <header>
         <section class="nav flex items-center p-1 gap-2 justify-between">
@@ -21,13 +20,10 @@
             <nav class="navLinks items-center text-white ml-20 flex gap-14">
                 <a href="../index.html"
                     class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">HOME</a>
-
                 <a href="#"
-                    class="btn current bg-[#000851] rounded-full shadow-2xl px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">PRODUCTS</a>
-
+                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">PRODUCTS</a>
                 <a href="../pages/about.html"
                     class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">ABOUT</a>
-
                 <a href="../pages/contact.html"
                     class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">CONTACT</a>
             </nav>
@@ -44,6 +40,7 @@
     <main class="flex flex-col justify-center items-center gap-5 w-screen">
         <div class="carousel w-full">
             <img class="carousel-image" src="../assets/images/Sin título.jpg" alt="Imagen 1 de carousel" />
+
             <img class="carousel-image" src="../assets/images/Banner Hardware.png" alt="Imagen 2 de carousel" />
             <img class="carousel-image" src="../assets/images/otra.jpg" alt="Imagen 3 de carousel" />
             <img class="carousel-image" src="../assets/images/programas-crear-banners.jpg" alt="Imagen 4 de carousel" />
@@ -104,19 +101,17 @@
             <button class="prev" onclick="moveSlides(-1)">&#10094;</button>
             <button class="next" onclick="moveSlides(1)">&#10095;</button>
         </div>
-
-        <div class="">
-
+        <div class="flex flex-wrap justify-around w-full">
+            <label for="searchName">
+                <input type="text" placeholder="Search..." id="searchName"
+                    class="w-96 px-4 py-2 rounded-full pl-10 border border-black">
+            </label>
+            <label for="price">Price (ARS):
+                <input class="w-60" type="range" name="price" id="price" min="1000" max="200000" step="100" value="25000" />
+                <output class="price-output" for="price"></output>
+          </label>
         </div>
-        <article
-            class="flex flex-col gap-2 justify-evenly border-4 border-black border-solid bg-gradient-to-r from-blue-400 to-indigo-700 w-[230px] h-[400px] px-2 py-2 rounded text-ellipsis">
-            <img class="w-[220px] h-1/2 rounded mb-2 border-4 border-black border-solid" src="Memoria-RAM.webp"
-                alt="memoria" />
-            <hr class="border" />
-            <span class="font-bold pl-2 text-2xl mt-4 text-white">$100.000</span>
-            <span class="px-2 mb-4 text-white">Kingston Fury Beast DDR4 RGB KF432C16BBA/16 1 16 GB - Negro -
-                RGB</span>
-        </article>
+      <div class="flex flex-wrap items-center gap-5" id="containerProducts"></div>
     </main>
     <footer class="flex flex-wrap justify-around pt-5">
         <div class="flex items-center justify-center w-[200px] h-[200px]">
@@ -164,7 +159,10 @@
         </div>
     </footer>
 
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/marcas.js"></script>
     <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/products.js"></script>
 </body>
 
 </html>

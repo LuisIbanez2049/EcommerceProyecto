@@ -1,4 +1,4 @@
-[
+const products = [
     {
         "ID": 1,
         "Marca": "Dell",
