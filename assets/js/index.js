@@ -38,3 +38,5 @@ showSlides();
 
 // Set interval for automatic slide movement
 setInterval(autoMoveSlides, 5000); // Change slide every 5 seconds
+
+
