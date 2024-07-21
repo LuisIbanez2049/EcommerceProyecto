@@ -38,6 +38,7 @@
             </div>
         </section>
     </header>
+
     <main class="flex flex-col justify-center items-center gap-5 w-screen">
         <div class="carousel w-full">
             <img class="carousel-image" src="../assets/images/Sin título.jpg" alt="Imagen 1 de carousel" />
@@ -56,13 +57,16 @@
                     <img class="border border-black w-28 h-28 rounded-full " src="../assets/images/marca-acer.svg"
                         alt="marca Acer" data-marca="Acer" onclick="selectBrand(this)">
                     <img class="border border-black w-28 h-28 rounded-full object-contain"
-                        src="../assets/images/marca-adata.svg" alt="marca Adata" data-marca="Adata" onclick="selectBrand(this)">
+                        src="../assets/images/marca-adata.svg" alt="marca Adata" data-marca="Adata"
+                        onclick="selectBrand(this)">
                     <img class="border border-black w-28 h-28 rounded-full" src="../assets/images/marca-Asus.jpg"
                         alt="marca Asus" data-marca="Asus" onclick="selectBrand(this)">
                     <img class="border border-black w-28 h-28 rounded-full object-contain"
-                        src="../assets/images/marca-benq.svg" alt="marca Benq" data-marca="BenQ" onclick="selectBrand(this)">
+                        src="../assets/images/marca-benq.svg" alt="marca Benq" data-marca="BenQ"
+                        onclick="selectBrand(this)">
                     <img class="border border-black w-28 h-28 rounded-full object-contain"
-                        src="../assets/images/marca-corsair.jpg" alt="marca Corsair" data-marca="Corsair" onclick="selectBrand(this)">
+                        src="../assets/images/marca-corsair.jpg" alt="marca Corsair" data-marca="Corsair"
+                        onclick="selectBrand(this)">
                 </div>
                 <div class="slide">
                     <img class="border border-black w-28 h-28 rounded-full " src="../assets/images/marca-Crucial.jpg"
@@ -72,7 +76,8 @@
                     <img class="border border-black w-28 h-28 rounded-full " src="../assets/images/marca-gskill.svg"
                         alt="marca G.Skill" data-marca="G.Skill" onclick="selectBrand(this)">
                     <img class="border border-black w-28 h-28 rounded-full object-cover"
-                        src="../assets/images/marca-hiperX.jpg" alt="marca HyperX" data-marca="HyperX" onclick="selectBrand(this)">
+                        src="../assets/images/marca-hiperX.jpg" alt="marca HyperX" data-marca="HyperX"
+                        onclick="selectBrand(this)">
                     <img class="border border-black w-28 h-28 rounded-full " src="../assets/images/marca-hp.svg"
                         alt="marca HP" data-marca="HP" onclick="selectBrand(this)">
                 </div>
@@ -86,7 +91,8 @@
                     <img class="border border-black w-28 h-28 rounded-full " src="../assets/images/marca-Logitech.jpg"
                         alt="marca Logitech" data-marca="Logitech" onclick="selectBrand(this)">
                     <img class="border border-black w-28 h-28 rounded-full object-cover"
-                        src="../assets/images/marca-msi.jpg" alt="marca MSI" data-marca="MSI" onclick="selectBrand(this)">
+                        src="../assets/images/marca-msi.jpg" alt="marca MSI" data-marca="MSI"
+                        onclick="selectBrand(this)">
                 </div>
                 <div class="slide">
                     <img class="border border-black w-28 h-28 rounded-full " src="../assets/images/marca-razer.jpg"
@@ -102,7 +108,8 @@
             <button class="prev" onclick="moveSlides(-1)">&#10094;</button>
             <button class="next" onclick="moveSlides(1)">&#10095;</button>
         </div>
-        <div class="flex flex-wrap justify-around w-full">
+
+        <div class="flex flex-wrap justify-around w-full mt-10">
             <label for="searchName">
                 <input type="text" placeholder="Search..." id="searchName"
                     class="w-96 px-4 py-2 rounded-full pl-10 border border-black">
@@ -117,8 +124,10 @@
             <input type="number" id="priceMax" name="priceMax" value="0">
             <span id="priceMaxValue">0</span>
         </div>
-        <div class="flex flex-wrap items-center justify-center gap-5 mb-5" id="containerProducts"></div>
+
+        <div class="flex flex-wrap items-center justify-center gap-10 m-5" id="containerProducts"></div>
     </main>
+    
     <footer class="flex flex-wrap justify-around pt-5">
         <div class="flex items-center justify-center w-[200px] h-[200px]">
             <img class="logo w-36 h-36" src="../assets/images/footer/logo-techStore.gif" alt="logo techStore" />

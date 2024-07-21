@@ -2,13 +2,13 @@ let inputSearch = document.getElementById("searchName");
 
 // Función para estructurar una tarjeta de producto
 function structureCard(id, img, product, marca, price, stock) {
-    return `<a href="./search.html?id=${id}"><article class="flex flex-col gap-2 justify-center border-4 border-black border-solid bg-gradient-to-r from-blue-400 to-indigo-700 w-[230px] h-[400px] px-2 py-2 rounded text-ellipsis">
-            <img class="w-[220px] h-[150px] rounded mb-2 border-4 border-black border-solid object-cover" src="${img}" alt="${product}, ${marca}" />
+    return `<a href="./search.html?id=${id}"><article class="flex flex-col gap-2 justify-center bg-white px-2 py-2 rounded text-ellipsis border-2 border-gray-200 hover:shadow hover:shadow-gray-400 hover:shadow-xl">
+            <img class="w-[220px] h-[150px] rounded mb-2 border-black border-solid object-cover" src="${img}" alt="${product}, ${marca}" />
             <hr class="border" />
-            <span class="font-bold pl-2 text-2xl mt-4 text-white">${price}</span>
-            <span class="px-2 mb-4 text-white text-xl">${product}</span>
-            <span class="px-2 mb-4 text-white text-xl">Brand: ${marca}</span>
-            <span class="px-2 mb-4 text-white text-xl">Available stock: ${stock}</span>
+            <span class="font-bold pl-2 text-2xl mt-4">${price}</span>
+            <span class="px-2 mb-4 text-xl">${product}</span>
+            <span class="px-2 mb-4 text-xl">Brand: ${marca}</span>
+            <span class="px-2 mb-4 text-xl">Available stock: ${stock}</span>
         </article></a>`;
 }
 

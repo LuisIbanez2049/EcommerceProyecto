@@ -126,11 +126,10 @@ button{
     font-weight: 500;
 }
 
-
 /* Estilo de la sección de contacto */
 
 label{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -180,17 +179,16 @@ h1[data-h1]{
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: var(--naranja);
+    background-color: var(--blanco);
     display: flex;
     align-items: center;
     justify-content: center;
     /* flex: 2; */
-
 }
 
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1s ease-in-out;
     width: 300%;
     
 }
@@ -208,7 +206,6 @@ h1[data-h1]{
 
 .slide img {
     margin: 0;
-    /* font-size: 24px; */
     color: #333;
     font-size: calc(var(--base-font-size) + 1vw);
 }
@@ -223,12 +220,12 @@ h1[data-h1]{
     top: 50%;
     transform: translateY(-50%);
     background-color: transparent;
-    color: white;
+    color: rgb(72, 72, 72);
     border: none;
     padding: 1rem;
     cursor: pointer;
     border-radius: 50%;
-    user-select: none;
+    font-size: 2rem;
 }
 
 .prev {
