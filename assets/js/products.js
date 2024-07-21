@@ -82,12 +82,14 @@ function structureCard(id, img, product, brand, price, stock) {
             </article>`;
 }
 
+// Función para imprimir tarjetas de productos
 function printCards(products) {
     let containerProducts = document.getElementById("containerProducts");
     let cards = "";
     if (products.length === 0) {
-        containerProducts.innerHTML = `<p>¡Resultados no encontrados!</p>`;
-        return;
+        // Si no hay productos, muestra un mensaje de "Results not found!"
+        containerProducts.innerHTML = `<p>Results not found!</p>`;
+        return; // Termina la ejecución de la función aquí
     }
     products.forEach(product => {
         const priceProduct = formatCurrency(product["Precio (ARS)"]);
@@ -226,17 +228,17 @@ function updateQuantity(productId, quantity) {
     }
 }
 
-// Event listeners para la búsqueda dinámica
-inputSearch.addEventListener("input", filterProducts);
-document.getElementById("priceMin").addEventListener("input", filterProducts);
-document.getElementById("priceMax").addEventListener("input", filterProducts);
+// // Event listeners para la búsqueda dinámica
+// inputSearch.addEventListener("input", filterProducts);
+// document.getElementById("priceMin").addEventListener("input", filterProducts);
+// document.getElementById("priceMax").addEventListener("input", filterProducts);
 
-// Obtener todas las imágenes que representan marcas y añadirles un event listener
-const brandImages = document.querySelectorAll('img[data-brand]');
-brandImages.forEach(image => {
-    image.addEventListener('click', function (event) {
-        brandImages.forEach(img => img.classList.remove('selected')); // Elimina la clase 'selected' de todas las imágenes
-        event.target.classList.add('selected'); // Añade la clase 'selected' a la imagen clickeada
-        filterProducts(); // Filtra los productos con la marca seleccionada
-    });
-});
+// // Obtener todas las imágenes que representan marcas y añadirles un event listener
+// const brandImages = document.querySelectorAll('img[data-brand]');
+// brandImages.forEach(image => {
+//     image.addEventListener('click', function (event) {
+//         brandImages.forEach(img => img.classList.remove('selected')); // Elimina la clase 'selected' de todas las imágenes
+//         event.target.classList.add('selected'); // Añade la clase 'selected' a la imagen clickeada
+//         filterProducts(); // Filtra los productos con la marca seleccionada
+//     });
+// });
