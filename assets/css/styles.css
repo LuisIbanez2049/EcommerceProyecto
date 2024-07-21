@@ -33,6 +33,48 @@
     content: "✖"; 
 }*/ 
 
+:root {
+    --celeste: #1CB5E0;
+    --azul: #000851;
+    --marron: #664731;
+    --rojo:#f01515;
+    --negro:#000000;
+    --rosa:#dc8998;
+    --azul:#3533cd;
+    --verde: #7ed957;
+    --blanco:#ffffff;
+    --gris: #eeeeee;
+}
+
+body {
+    width: 100%;
+    overflow-x:hidden
+}
+
+main {
+    background-color: var(--gris);
+}
+
+/* Estilo de la sección home */
+
+.pContainer {
+   box-shadow: 3px 3px 9px var(--marron);
+   margin-top: 4%;
+}
+
+.imgHome {
+    border-radius: 10px 0px 0px 10px;
+    width: 30%;
+    object-fit: cover;
+}
+
+.imgHome2 {
+    border-radius: 0px 10px 10px 0px;
+    width: 40%;
+    object-fit: cover;
+}
+
+/* Estilo del encabezado */
 .nav {
     background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
 }
@@ -62,6 +104,8 @@
     background-color: var(--amarillo);
 }
 
+/* Estilo del footer */
+
 footer, .divButton {
     background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
     color: white;
@@ -82,9 +126,10 @@ button{
     font-weight: 500;
 }
 
+/* Estilo de la sección de contacto */
 
 label{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -106,12 +151,6 @@ div[data-contenedorFormulario]{
 }
 h1[data-h1]{
     text-shadow: 1px 2px 8px rgb(255, 255, 255);
-}
-
-body {
-    width: 100%;
-    overflow-x:hidden
-    
 }
 
 .animacion {
@@ -140,17 +179,16 @@ body {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: var(--naranja);
+    background-color: var(--blanco);
     display: flex;
     align-items: center;
     justify-content: center;
     /* flex: 2; */
-
 }
 
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1s ease-in-out;
     width: 300%;
     
 }
@@ -168,7 +206,6 @@ body {
 
 .slide img {
     margin: 0;
-    /* font-size: 24px; */
     color: #333;
     font-size: calc(var(--base-font-size) + 1vw);
 }
@@ -183,12 +220,12 @@ body {
     top: 50%;
     transform: translateY(-50%);
     background-color: transparent;
-    color: white;
+    color: rgb(72, 72, 72);
     border: none;
     padding: 1rem;
     cursor: pointer;
     border-radius: 50%;
-    user-select: none;
+    font-size: 2rem;
 }
 
 .prev {
