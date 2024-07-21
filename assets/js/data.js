@@ -7,7 +7,7 @@ const products = [
         "Detalles": "15.6\" FHD, i5, 8GB RAM, 256GB SSD",
         "URL de Foto": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/15-3520/media-gallery/notebook-inspiron-15-3520-black-gallery-6.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=655&qlt=100,1&resMode=sharp2&size=655,402&chrss=full",
         "Precio (ARS)": 150000,
-        "Stock": 3
+        "Stock": 0
     },
     {
         "ID": 2,
@@ -242,11 +242,11 @@ const products = [
     {
         "ID": 25,
         "Marca": "Kingston",
-        "Tipo de Producto": "Memoria RAM",
-        "Modelo": "HyperX Fury 16GB",
-        "Detalles": "16GB DDR4, 3200MHz",
-        "URL de Foto": "https://imgs.search.brave.com/FMqZsx2BC2KV0je8Z8CZI33Z6sYxGfTibYS-pUMfnoQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdG9y/YWdlLmdvb2dsZWFw/aXMuY29tL3BpY2th/Ym9vLXByb2QvbWVk/aWEvY2F0YWxvZy9w/cm9kdWN0L2NhY2hl/LzkwZTNiOWY0MTIw/ZmMyMDliZjYwMDAz/ZTNiMGUxMzIzL2gv/eS9oeXBlcngtZnVy/eS01LjIuMjQuXzEu/anBn",
-        "Precio (ARS)": 15000,
+        "Tipo de Producto": "Disco Sólido",
+        "Modelo": "Disco Sólido Interno Kingston Sa400s37/960g Sata 960gb Negro",
+        "Detalles": "960GB Sa400s37/960g",
+        "URL de Foto": "https://http2.mlstatic.com/D_NQ_NP_2X_904375-MLA72445223422_102023-F.webp",
+        "Precio (ARS)": 89200,
         "Stock": 10
     },
     {

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon.jpg" />
+    <title>Tech Store</title>
+</head>
+
+<body class="w-screen">
+    <header>
+        <section class="nav flex items-center p-1 gap-2 justify-between">
+            <a href="#">
+                <img class="w-16 bg-white rounded-full border-white border-2 ml-10 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl "
+                    src="../assets/images/logo.gif" alt="logo"></a>
+
+            <nav class="navLinks items-center text-white ml-20 flex gap-14">
+                <a href="../index.html"
+                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">HOME</a>
+                <a href="./products.html"
+                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">PRODUCTS</a>
+                <a href="./about.html"
+                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">ABOUT</a>
+                <a href="./contact.html"
+                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">CONTACT</a>
+            </nav>
+
+            <div class="relative w-25 flex items-center mr-10">
+                <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-full pl-10">
+                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-white pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </span>
+            </div>
+        </section>
+    </header>
+
+    <main class="flex justify-center">
+        <div class="cart_container bg-#eeeeee m-10 w-[90%] h-[60vh] flex gap-5">
+            <div class="flex justify-center flex-col items-center bg-white w-[70%] gap-5">
+                <p>Add items to your cart</p>
+                <img src="../assets/images/5412512.png" alt="cart" class="w-20 h-20">
+                <a href="./products.html"><button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">View cart</button></a>
+            </div>
+            <div class="flex flex-col bg-white text-gray-500 p-5 w-[30%] h-[30vh] gap-5">
+                <p>Your cart is empty</p>
+                <p class="text-sm italic">Your items will be displayed here</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="flex flex-wrap justify-around pt-5">
+        <div class="flex items-center justify-center w-[200px] h-[200px]">
+            <img class="logo w-36 h-36" src="../assets/images/footer/logo-techStore.gif" alt="logo techStore" />
+        </div>
+        <div class="flex flex-col gap-2 items-start">
+            <button>Categories</button>
+            <button>Notebooks</button>
+            <button>Assembled PC and Mini PC</button>
+            <button>PC Components</button>
+            <button>Combo Update and mother</button>
+            <button>Monitors</button>
+            <button>PC peripherals</button>
+        </div>
+        <div class="flex flex-col gap-2 items-start">
+            <button>Headphones</button>
+            <button>Microphones</button>
+        </div>
+        <div class="flex flex-col gap-2 items-start">
+            <button>Links of interest</button>
+            <button>HyperX Zone</button>
+        </div>
+        <div>
+            <div class="flex gap-2">
+                <img class="w-10 h-10" src="../assets/images/footer/logo-facebook.png" alt="logo facebook" />
+                <img class="w-10 h-10" src="../assets/images/footer/logo-instagram.png" alt="logo instagram" />
+                <img class="w-10 h-10" src="../assets/images/footer/logo-youtube.png" alt="logo youtube" />
+            </div>
+            <div class="flex flex-col gap-2">
+                <p><a href="tel:+(011) 4551-7090">Tel: (011) 4551-7090</a></p>
+                <p><a href="mailto:info@techStore.com">info@techStore.com</a></p>
+                <p>Av. Forest 365 C.ABA Capital Federal</p>
+            </div>
+        </div>
+        <div class="flex flex-col w-11/12 h-16 mt-5">
+            <div class="border-t-2 border-white flex justify-between w-full h-14">
+                <button>Powered by Mercado Shops</button>
+                <button>Legal notices</button>
+                <button>How to buy?</button>
+                <button>How do we protect your privacy?</button>
+                <button>Protected purchase</button>
+                <button>Configure cookies</button>
+                <img class="w-10 h-14 pt-1" src="../assets/images/footer/logo-dataFiscal.jpg" alt="logo data fiscal" />
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
