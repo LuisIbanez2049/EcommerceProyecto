@@ -1,0 +1,243 @@
+/* .navigation {
+    display: none; Ocultar el menú inicialmente
+    flex-direction: column; 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation.show {
+    display: flex; 
+}
+
+.navigation li {
+    display: block;
+    text-align: center;
+}
+
+.navigation a {
+    display: block;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#menu::before {
+    content: "≡";
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#menu.show::before {
+    content: "✖"; 
+}*/ 
+
+:root {
+    --celeste: #1CB5E0;
+    --azul: #000851;
+    --marron: #664731;
+    --rojo:#f01515;
+    --negro:#000000;
+    --rosa:#dc8998;
+    --azul:#3533cd;
+    --verde: #7ed957;
+    --blanco:#ffffff;
+    --gris: #eeeeee;
+}
+
+body {
+    width: 100%;
+    overflow-x:hidden
+}
+
+main {
+    background-color: var(--gris);
+}
+
+/* Estilo de la sección home */
+
+.pContainer {
+   box-shadow: 3px 3px 9px var(--marron);
+   margin-top: 4%;
+}
+
+.imgHome {
+    border-radius: 10px 0px 0px 10px;
+    width: 30%;
+    object-fit: cover;
+}
+
+.imgHome2 {
+    border-radius: 0px 10px 10px 0px;
+    width: 40%;
+    object-fit: cover;
+}
+
+/* Estilo del encabezado */
+.nav {
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+}
+/* Estilo del carrusel */
+.carousel {
+    position: relative;
+    width: 100vw;
+    height: 25vw;
+    overflow: hidden;
+    display: block;
+}
+
+.carousel-image {
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 25vw;
+    object-fit: cover;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.carousel-image:not(:first-child) {
+    opacity: 0;
+}
+
+.carousel {
+    background-color: var(--amarillo);
+}
+
+/* Estilo del footer */
+
+footer, .divButton {
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    color: white;
+}
+
+.logo {
+    box-shadow: 1px 1px 9px gray;
+    border-radius: 100%;
+}
+
+p {
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+button{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* Estilo de la sección de contacto */
+
+label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.inputs{
+    padding: 12px;
+    font-size: 25px;
+    background-color: aquamarine;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+form[data-contenedorFrom]{
+    box-shadow: 1px 1px 33px black;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);;
+}
+
+div[data-contenedorFormulario]{
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+h1[data-h1]{
+    text-shadow: 1px 2px 8px rgb(255, 255, 255);
+}
+
+.animacion {
+    text-align: center; 
+    animation: fadeInLeftBig 5s infinite;
+    font-size: 7vh; 
+}
+
+@keyframes fadeInLeftBig {
+    from {
+    opacity: 0;
+    transform: translateX(-100px);
+    }
+    to {
+    opacity: 1;
+    transform: translateX(0);
+    font-size: 8vh;
+    text-shadow: #000000a5 1px 0 10px;
+}
+}
+
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex: 2; */
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 300%;
+    
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.slide img {
+    margin: 0;
+    color: #333;
+    font-size: calc(var(--base-font-size) + 1vw);
+}
+
+.selectedBrand {
+    border: 10px solid rgb(27, 10, 182); /* Cambia esto según tu esquema de colores */
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: rgb(72, 72, 72);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: transparent;
+    color: #000000;
+}
