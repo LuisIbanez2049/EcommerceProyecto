@@ -1,15 +1,15 @@
 let inputSearch = document.getElementById("searchName");
 
 // Función para estructurar una tarjeta de producto
-function structureCard(img, product, marca, price, stock) {
-    return `<article class="flex flex-col gap-2 justify-center border-4 border-black border-solid bg-gradient-to-r from-blue-400 to-indigo-700 w-[230px] h-[400px] px-2 py-2 rounded text-ellipsis">
+function structureCard(id, img, product, marca, price, stock) {
+    return `<a href="./search.html?id=${id}"><article class="flex flex-col gap-2 justify-center border-4 border-black border-solid bg-gradient-to-r from-blue-400 to-indigo-700 w-[230px] h-[400px] px-2 py-2 rounded text-ellipsis">
             <img class="w-[220px] h-[150px] rounded mb-2 border-4 border-black border-solid object-cover" src="${img}" alt="${product}, ${marca}" />
             <hr class="border" />
             <span class="font-bold pl-2 text-2xl mt-4 text-white">${price}</span>
             <span class="px-2 mb-4 text-white text-xl">${product}</span>
             <span class="px-2 mb-4 text-white text-xl">Brand: ${marca}</span>
             <span class="px-2 mb-4 text-white text-xl">Available stock: ${stock}</span>
-        </article>`;
+        </article></a>`;
 }
 
 // Función para formatear la moneda en USD
@@ -28,7 +28,7 @@ function printCards(products) {
     }
     products.forEach(product => {
         const priceProduct = formatCurrency(product["Precio (ARS)"]);
-        cards += structureCard(product['URL de Foto'], product['Tipo de Producto'], product.Marca, priceProduct, product.Stock);
+        cards += structureCard(product.ID, product['URL de Foto'], product['Tipo de Producto'], product.Marca, priceProduct, product.Stock);
     });
     containerProducts.innerHTML = cards;
 }
