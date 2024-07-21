@@ -13,7 +13,7 @@
 
 <body class="w-screen">
     <header>
-        <section class="nav flex items-center p-1 gap-2 justify-between">
+        <section class="nav flex items-center p-1 gap-2 justify-between relative">
             <a href="#">
                 <img class="w-16 bg-white rounded-full border-white border-2 ml-10 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl "
                     src="../assets/images/logo.gif" alt="logo"></a>
@@ -34,7 +34,12 @@
                 <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-white pointer-events-none">
                     <i class="fas fa-search text-gray-400"></i>
                 </span>
-                <i class="fa fa-shopping-cart text-white text-xl pl-3"></i>
+                <button class="self-end rounded-lg" id="emptyCartButton">
+                    <i id="cartNavButton" class="p-2 mr-3 text-black text-xl fa-solid fa-cart-shopping bg-white rounded-full"></i>
+                </button>
+                <div id="cartProducts" class="rounded-lg bg-white mt-6 p-2 flex flex-col items-center justify-between gap-1 z-10 hidden overflow-y-scroll w-96 h-80 absolute top-10 right-[10px]">
+                     <!-- Los productos del carrito se mostrarán aquí  -->
+                </div>
             </div>
         </section>
     </header>
@@ -109,11 +114,22 @@
             <button class="next" onclick="moveSlides(1)">&#10095;</button>
         </div>
 
+        <div class="flex flex-wrap justify-around w-full">
+            <div class="relative w-25 flex items-center mr-10">
+                <input type="text" placeholder="Search..." id="searchName" class="w-full px-4 py-2 rounded-full pl-10">
+                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-white pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </span>
+                <i class="fa fa-shopping-cart text-white text-xl pl-3"></i>
+            </div>
+
+
         <div class="flex flex-wrap justify-around w-full mt-10 bg-gray-300 p-5 items-center">
             <label for="searchName">
                 <input type="text" placeholder="Search..." id="searchName"
                     class="w-96 px-4 py-2 rounded-full pl-10 border border-black">
             </label>
+
             <!-- Rango de Precio Mínimo -->
             <label for="priceMin">Precio Mínimo:</label>
             <input type="number" id="priceMin" name="priceMin" value="0">
@@ -125,7 +141,13 @@
             <span id="priceMaxValue">0</span>
         </div>
 
+        <div class="flex flex-wrap items-center justify-center gap-5 mb-5" id="containerProducts"></div>
+        <img class="w-10/12 object-cover" src="../assets/images/medios-de-pagos.png" alt="medios de pagos img">
+        <img class="w-10/12 object-cover" src="../assets/images/info-para-saber-comprar.png" alt="info para saber comprar img">
+
+
         <div class="flex flex-wrap items-center justify-center gap-10 m-5" id="containerProducts"></div>
+
     </main>
     
     <footer class="flex flex-wrap justify-around pt-5">
