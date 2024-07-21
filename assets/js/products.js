@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('emptyCartButton').addEventListener('click', emptyCart);
 });
 
-let inputSearch = document.getElementById("searchName");
-
 function selectBrand(element) {
     // Comprueba si la marca ya estaba seleccionada
     if (element.classList.contains('selectedBrand')) {
@@ -22,13 +20,14 @@ function selectBrand(element) {
 function filterProducts() {
     let selectedBrandElement = document.querySelector('.selectedBrand');
     let marcsSelected = selectedBrandElement ? selectedBrandElement.getAttribute('data-marca') : null;
+    let nameSearchNav = document.getElementById("searchNameNav").value.trim().toLowerCase();
     let nameSearch = document.getElementById("searchName").value.trim().toLowerCase();
     let priceMin = Number(document.getElementById("priceMin").value) || 0;
     let priceMax = Number(document.getElementById("priceMax").value) || Number.MAX_SAFE_INTEGER;
 
     let filteredProducts = products.filter(product => {
-        let matchesMarca = !marcsSelected || product.Marca === marcsSelected;
-        let matchesName = nameSearch === '' || product['Tipo de Producto'].toLowerCase().includes(nameSearch);
+        let matchesMarca = !marcsSelected || product.Marca.toLowerCase() === marcsSelected.toLowerCase();
+        let matchesName = (nameSearch === '' || product['Tipo de Producto'].toLowerCase().includes(nameSearch) || product['Marca'].toLowerCase().includes(nameSearch)) && (nameSearchNav === '' || product['Marca'].toLowerCase().includes(nameSearchNav) || product['Tipo de Producto'].toLowerCase().includes(nameSearchNav));
         let matchesPrice = (!priceMin || product['Precio (ARS)'] >= priceMin) && (!priceMax || product['Precio (ARS)'] <= priceMax);
         return matchesMarca && matchesName && matchesPrice;
     });
@@ -36,11 +35,15 @@ function filterProducts() {
     printCards(filteredProducts);
 }
 
-// Event listeners para búsqueda dinámica
+// Asegurarse de que los event listeners estén correctamente asignados
+let inputSearch = document.getElementById("searchName");
+let inputSearchNav = document.getElementById("searchNameNav");
+
+
 inputSearch.addEventListener("input", filterProducts);
+inputSearchNav.addEventListener("input", filterProducts);
 document.getElementById("priceMin").addEventListener("input", filterProducts);
 document.getElementById("priceMax").addEventListener("input", filterProducts);
-
 // Obtener todas las imágenes que representan marcas y añadir el escuchador de eventos
 const marcaImages = document.querySelectorAll('img[data-marca]');
 marcaImages.forEach(image => {
