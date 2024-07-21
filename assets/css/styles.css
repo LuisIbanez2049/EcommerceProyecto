@@ -33,6 +33,48 @@
     content: "✖"; 
 }*/ 
 
+:root {
+    --celeste: #1CB5E0;
+    --azul: #000851;
+    --marron: #664731;
+    --rojo:#f01515;
+    --negro:#000000;
+    --rosa:#dc8998;
+    --azul:#3533cd;
+    --verde: #7ed957;
+    --blanco:#ffffff;
+    --gris: #eeeeee;
+}
+
+body {
+    width: 100%;
+    overflow-x:hidden
+}
+
+main {
+    background-color: var(--gris);
+}
+
+/* Estilo de la sección home */
+
+.pContainer {
+   box-shadow: 3px 3px 9px var(--marron);
+   margin-top: 4%;
+}
+
+.imgHome {
+    border-radius: 10px 0px 0px 10px;
+    width: 30%;
+    object-fit: cover;
+}
+
+.imgHome2 {
+    border-radius: 0px 10px 10px 0px;
+    width: 40%;
+    object-fit: cover;
+}
+
+/* Estilo del encabezado */
 .nav {
     background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
 }
@@ -62,6 +104,8 @@
     background-color: var(--amarillo);
 }
 
+/* Estilo del footer */
+
 footer, .divButton {
     background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
     color: white;
@@ -82,6 +126,8 @@ button{
     font-weight: 500;
 }
 
+
+/* Estilo de la sección de contacto */
 
 label{
     font-size: 25px;
@@ -106,12 +152,6 @@ div[data-contenedorFormulario]{
 }
 h1[data-h1]{
     text-shadow: 1px 2px 8px rgb(255, 255, 255);
-}
-
-body {
-    width: 100%;
-    overflow-x:hidden
-    
 }
 
 .animacion {
