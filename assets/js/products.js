@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
+
     // Asegúrate de que esta línea se ejecute después de que el array de productos esté definido
     printCards(products); // Carga inicial de todas las tarjetas
     document.getElementById('emptyCartButton').addEventListener('click', emptyCart);
