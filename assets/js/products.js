@@ -1,20 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Asegúrate de que esta línea se ejecute después de que el array de productos esté definido
     printCards(products); // Carga inicial de todas las tarjetas
     document.getElementById('emptyCartButton').addEventListener('click', emptyCart);
 });
 
 function selectBrand(element) {
-    // Comprueba si la marca ya estaba seleccionada
     if (element.classList.contains('selectedBrand')) {
-        element.classList.remove('selectedBrand'); // Deselecciona la marca
+        element.classList.remove('selectedBrand');
     } else {
-        // Deselecciona cualquier marca previamente seleccionada
         document.querySelectorAll('.selectedBrand').forEach(el => el.classList.remove('selectedBrand'));
-        element.classList.add('selectedBrand'); // Selecciona la nueva marca
+        element.classList.add('selectedBrand');
     }
-    filterProducts(); // Actualiza los productos filtrados
+    filterProducts();
 }
 
 function filterProducts() {
@@ -48,41 +44,41 @@ document.getElementById("priceMax").addEventListener("input", filterProducts);
 const marcaImages = document.querySelectorAll('img[data-marca]');
 marcaImages.forEach(image => {
     image.addEventListener('click', function(event) {
-        marcaImages.forEach(img => img.classList.remove('selected')); // Remover la clase 'selected' de todas las imágenes
-        event.target.classList.add('selected'); // Añadir la clase 'selected' a la imagen clickeada
-        filterProducts(); // Filtrar productos con la marca seleccionada
+        marcaImages.forEach(img => img.classList.remove('selected'));
+        event.target.classList.add('selected');
+        filterProducts();
     });
 });
 
-// Corrección en la función de formato de moneda
 function formatCurrency(amount) {
     return new Intl.NumberFormat('en-AR', { style: 'currency', currency: 'ARS' }).format(amount);
 }
 
-// Función para estructurar una tarjeta de producto
 function structureCard(id, img, product, brand, price, stock) {
     let stockMessage = '';
-    let addToCartButton = `<button onclick="addToCart(${id})" class="add-to-cart-btn">Añadir al Carrito</button>`;
+    let addToCartButton = `<button onclick="addToCart(${id})" class="bg-blue-500 text-white px-4 py-2 rounded mt-2">Añadir al Carrito</button>`;
 
     if (stock <= 0) {
-        stockMessage = '<span class="px-2 mb-4 text-xl text-red-500">Out of Stock!</span>';
-        addToCartButton = ''; // No mostrar el botón de añadir al carrito si no hay stock
+        stockMessage = '<span class="text-red-500">Out of Stock!</span>';
+        addToCartButton = '';
     } else if (stock <= 5) {
-        stockMessage = '<span class="px-2 mb-4 text-xl text-red-500">Last units!</span>';
+        stockMessage = '<span class="text-red-500">Last units!</span>';
     } else {
-        stockMessage = `<span class="px-2 mb-4 text-xl">Available Stock: ${stock}</span>`;
+        stockMessage = `<span>Available Stock: ${stock}</span>`;
     }
 
-    return `<article class="flex flex-col gap-2 justify-center bg-white px-2 py-2 rounded text-ellipsis border-2 border-gray-200 hover:shadow hover:shadow-gray-400 hover:shadow-xl">
-            <img class="w-[220px] h-[150px] rounded mb-2 border-black border-solid object-cover" src="${img}" alt="${product}, ${brand}" />
-            <hr class="border" />
-            <span class="font-bold pl-2 text-2xl mt-4">${price}</span>
-            <span class="px-2 mb-4 text-xl">${product}</span>
-            <span class="px-2 mb-4 text-xl">Brand: ${brand}</span>
-            ${stockMessage}
-            <a href="./search.html?id=${id}">Details Product</a>
-            ${addToCartButton}
-            </article>`;
+    return `
+        <article class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <img class="w-48 h-48 object-cover mb-4 rounded-lg" src="${img}" alt="${product}, ${brand}" />
+            <div class="text-center">
+                <span class="text-xl font-bold">${price}</span>
+                <span class="block text-lg">${product}</span>
+                <span class="block text-gray-600">Brand: ${brand}</span>
+                ${stockMessage}
+                <a href="./search.html?id=${id}" class="text-blue-500 hover:underline mt-2 block">Details Product</a>
+                ${addToCartButton}
+            </div>
+        </article>`;
 }
 
 // Función para imprimir tarjetas de productos
@@ -101,25 +97,28 @@ function printCards(products) {
     containerProducts.innerHTML = cards;
 }
 
-// Paso 1: Desplegar el Carrito
 document.getElementById('cartNavButton').addEventListener('click', function() {
     document.getElementById('cartProducts').classList.toggle('hidden');
 });
 
-// Función para mostrar los productos en el carrito
 function displayCartItems() {
     const cartContainer = document.getElementById('cartProducts');
-    cartContainer.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevos elementos
+    cartContainer.innerHTML = '';
 
     cartItems.forEach(item => {
         const itemHTML = `
-            <div class="flex flex-row justify-between items-center bg-gray-100 p-2 m-2 rounded">
-                <img src="${item['URL de Foto']}" alt="${item['Tipo de Producto']}" class="w-20 h-20 rounded">
-                <div>
+            <div class="flex items-center bg-gray-100 p-4 rounded-lg mb-4">
+                <img src="${item['URL de Foto']}" alt="${item['Tipo de Producto']}" class="w-20 h-20 rounded mr-4">
+                <div class="flex-grow">
                     <p>${item['Tipo de Producto']}</p>
                     <p>Brand: ${item.Marca}</p>
-                    <p>Price: ${item["Precio (ARS)"]}</p>
-                    <p>Amount: <button onclick="decreaseQuantity(${item.ID})">-</button> ${item.quantity} <button onclick="increaseQuantity(${item.ID})">+</button></p>
+                    <p>Price: ${formatCurrency(item["Precio (ARS)"])}</p>
+                    <p>
+                        Amount: 
+                        <button onclick="decreaseQuantity(${item.ID})" class="px-2">-</button> 
+                        ${item.quantity} 
+                        <button onclick="increaseQuantity(${item.ID})" class="px-2">+</button>
+                    </p>
                     <p>Available Stock: ${item.Stock}</p>
                 </div>
             </div>
@@ -128,34 +127,30 @@ function displayCartItems() {
     });
 }
 
-// Funciones para actualizar la cantidad de productos en el carrito
 function increaseQuantity(productId) {
-    const product = cartItems.find(item => item.id === productId);
+    const product = cartItems.find(item => item.ID === productId);
     if (product.quantity < product.Stock) {
         product.quantity++;
-        displayCartItems(); // Actualizar la visualización del carrito
+        displayCartItems();
     }
 }
 
 function decreaseQuantity(productId) {
-    const product = cartItems.find(item => item.id === productId);
+    const product = cartItems.find(item => item.ID === productId);
     if (product.quantity > 1) {
         product.quantity--;
-        displayCartItems(); // Actualizar la visualización del carrito
+        displayCartItems();
     }
 }
 
-// Inicializar la visualización del carrito al cargar la página
 document.addEventListener('DOMContentLoaded', displayCartItems);
 
-
-// Añadir producto al carrito
 function addToCart(productId) {
-    const id = parseInt(productId, 10); // Convierte a número si es necesario
+    const id = parseInt(productId, 10);
     const product = products.find(product => product.ID === id);
 
     if (product && product.Stock > 0) {
-        product.Stock--; // Decrementa el stock
+        product.Stock--;
         let productInCart = cart.find(item => item.ID === id);
 
         if (productInCart) {
@@ -165,7 +160,7 @@ function addToCart(productId) {
             cart.push(productToAdd);
         }
         updateCart();
-        printCards(products); // Actualiza las tarjetas de productos para reflejar el cambio de stock
+        printCards(products);
     }
 }
 
@@ -177,18 +172,26 @@ function updateCart() {
     cart.forEach(product => {
         total += product['Precio (ARS)'] * product.quantity;
         cartHTML += `
-            <div class="cart-item">
-                <img src="${product['URL de Foto']}" alt="${product['Tipo de Producto']}" style="width: 50px; height: auto;">
-                ${product['Tipo de Producto']} - ${formatCurrency(product['Precio (ARS)'])} - Brand: ${product.Marca}
-                <select onchange="updateQuantity(${product.ID}, this.value)">` +
-            Array.from({ length: product.Stock + product.quantity }, (_, i) => `<option value="${i + 1}" ${product.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('') +
-            `</select>
-                <button onclick="removeFromCart(${product.ID})">X</button>
-            </div>`;
+            <div class="flex items-center justify-between p-2 m-2 bg-gray-200 rounded-lg">
+                <img src="${product['URL de Foto']}" alt="${product['Tipo de Producto']}" class="w-12 h-12 rounded mr-2">
+                <div class="flex-grow">
+                    <p class="font-bold">${product['Tipo de Producto']}</p>
+                    <p>Brand: ${product.Marca}</p>
+                    <p>Price: ${formatCurrency(product['Precio (ARS)'])}</p>
+                    <p>
+                        Quantity:
+                        <select onchange="updateQuantity(${product.ID}, this.value)" class="border rounded">
+                            ${Array.from({ length: product.Stock + product.quantity }, (_, i) => `<option value="${i + 1}" ${product.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
+                        </select>
+                    </p>
+                </div>
+                <button onclick="removeFromCart(${product.ID})" class="bg-red-500 text-white px-2 py-1 rounded">X</button>
+            </div>
+        `;
     });
-    cartHTML += `<div>Total: $<span id="totalPrice">${formatCurrency(total)}</span></div>
-    <button id="emptyCartButton" onclick="emptyCart()">Empty Cart</button>
-`;
+    cartHTML += `<div class="p-4">Total: <span id="totalPrice" class="font-bold">${formatCurrency(total)}</span></div>
+    <button id="emptyCartButton" onclick="emptyCart()" class="bg-red-500 text-white px-4 py-2 rounded mt-2">Empty Cart</button>
+    `;
     document.getElementById('cartProducts').innerHTML = cartHTML;
 }
 
@@ -197,10 +200,10 @@ function removeFromCart(productId) {
     if (productIndex !== -1) {
         const product = products.find(product => product.ID === productId);
         if (product) {
-            product.Stock += cart[productIndex].quantity; // Incrementa el stock
-            cart.splice(productIndex, 1); // Elimina el producto del carrito
+            product.Stock += cart[productIndex].quantity;
+            cart.splice(productIndex, 1);
             updateCart();
-            printCards(products); // Actualiza las tarjetas de productos para reflejar el cambio de stock
+            printCards(products);
         }
     }
 }
@@ -209,12 +212,12 @@ function emptyCart() {
     cart.forEach(productInCart => {
         const product = products.find(product => product.ID === productInCart.ID);
         if (product) {
-            product.Stock += productInCart.quantity; // Restaura el stock
+            product.Stock += productInCart.quantity;
         }
     });
     cart = [];
     updateCart();
-    printCards(products); // Actualiza las tarjetas de productos para reflejar el cambio de stock
+    printCards(products);
 }
 
 function updateQuantity(productId, quantity) {
