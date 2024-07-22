@@ -31,7 +31,7 @@
                     <li><a href="./contact.html" class="btn">CONTACT</a></li>
                 </ul>
             </nav>
-            
+
             <div class="relative w-full sm:w-1/3 flex items-center mt-4 sm:mt-0">
                 <input type="text" placeholder="Search..." id="searchNameNav"
                     class="w-full px-4 py-2 rounded-full pl-10" />
@@ -171,10 +171,11 @@
         </main>
 
 
-        <footer class="flex flex-wrap justify-around pt-5">
-            <div class="flex items-center justify-center w-[200px] h-[200px]">
-                <img class="logo w-36 h-36" src="../assets/images/footer/logo-techStore.gif" alt="logo techStore" />
-            </div>
+        <footer class="flex flex-wrap justify-around pt-5 w-full">
+        <div class="flex items-center justify-center w-[200px] h-[200px]">
+            <img class=" logo w-36 h-36" src="../assets/images/footer/logo-techStore.gif" alt="logo techStore">
+        </div>
+        <div class="footerCategories gap-10">
             <div class="flex flex-col gap-2 items-start">
                 <button>Categories</button>
                 <button>Notebooks</button>
@@ -188,35 +189,36 @@
                 <button>Headphones</button>
                 <button>Microphones</button>
             </div>
-            <div class="flex flex-col gap-2 items-start">
+            <div class="flex flex-col gap-2 items-start ">
                 <button>Links of interest</button>
                 <button>HyperX Zone</button>
             </div>
-            <div>
-                <div class="flex gap-2">
-                    <img class="w-10 h-10" src="../assets/images/footer/logo-facebook.png" alt="logo facebook" />
-                    <img class="w-10 h-10" src="../assets/images/footer/logo-instagram.png" alt="logo instagram" />
-                    <img class="w-10 h-10" src="../assets/images/footer/logo-youtube.png" alt="logo youtube" />
-                </div>
-                <div class="flex flex-col gap-2">
-                    <p><a href="tel:+(011) 4551-7090">Tel: (011) 4551-7090</a></p>
-                    <p><a href="mailto:info@techStore.com">info@techStore.com</a></p>
-                    <p>Av. Forest 365 C.ABA Capital Federal</p>
-                </div>
+        </div>
+        <div class="flex flex-col gap-2 items-center justify-center">
+            <div class="flex gap-2">
+                <img class="w-10 h-10" src="../assets/images/footer/logo-facebook.png" alt="logo facebook">
+                <img class="w-10 h-10" src="../assets/images/footer/logo-instagram.png" alt="logo instagram">
+                <img class="w-10 h-10" src="../assets/images/footer/logo-youtube.png" alt="logo youtube">
             </div>
-            <div class="flex flex-col w-11/12 h-16 mt-5">
-                <div class="border-t-2 border-white flex justify-between w-full h-14">
-                    <button>Powered by Mercado Shops</button>
-                    <button>Legal notices</button>
-                    <button>How to buy?</button>
-                    <button>How do we protect your privacy?</button>
-                    <button>Protected purchase</button>
-                    <button>Configure cookies</button>
-                    <img class="w-10 h-14 pt-1" src="../assets/images/footer/logo-dataFiscal.jpg"
-                        alt="logo data fiscal" />
-                </div>
+            <div class="flex flex-col gap-2 items-center">
+                <p><a href="tel:+(011) 4551-7090">Tel: (011) 4551-7090</a></p>
+                <p><a href="mailto:info@techStore.com">info@techStore.com</a></p>
+                <p>Av. Forest 365 C.ABA Capital Federal</p>
             </div>
-        </footer>
+        </div>
+        <div class="endFooter flex-col w-11/12 h-16 mt-5">
+            <div class="border-t-2 border-white flex justify-between w-full h-14">
+                <button>Powered by Mercado Shops</button>
+                <button>Legal notices</button>
+                <button>How to buy?</button>
+                <button>How do we protect your privacy?</button>
+                <button>Protected purchase</button>
+                <button>Configure cookies</button>
+                <img class="w-10 h-14 pt-1" src="../assets/images/footer/logo-dataFiscal.jpg" alt="logo data fiscal">
+            </div>
+        </div>
+
+    </footer>
         <!-- Modal -->
         <div id="buyModal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
             <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full relative">

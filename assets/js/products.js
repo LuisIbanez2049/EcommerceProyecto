@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-    // Asegúrate de que esta línea se ejecute después de que el array de productos esté definido
-    printCards(products); // Carga inicial de todas las tarjetas
+    printCards(products);
+    displayCartItems()
+    addToCart(productId)
+    updateCart()
+    // Carga inicial de todas las tarjetas
     document.getElementById('emptyCartButton').addEventListener('click', emptyCart);
+
+
 });
 
 function selectBrand(element) {
@@ -188,7 +192,7 @@ function updateCart() {
     cart.forEach(product => {
         total += product['Precio (ARS)'] * product.quantity;
         cartHTML += `
-            <div class="flex items-center justify-between p-2 m-2 bg-gray-200 rounded-lg">
+            <div class="flex items-center justify-between text-white p-2 m-2 bg-gray-600 rounded-lg">
                 <img src="${product['URL de Foto']}" alt="${product['Tipo de Producto']}" class="w-12 h-12 rounded mr-2">
                 <div class="flex-grow">
                     <p class="font-bold">${product['Tipo de Producto']}</p>
@@ -196,7 +200,7 @@ function updateCart() {
                     <p>Price: ${formatCurrency(product['Precio (ARS)'])}</p>
                     <p>
                         Quantity:
-                        <select onchange="updateQuantity(${product.ID}, this.value)" class="border rounded">
+                        <select onchange="updateQuantity(${product.ID}, this.value)" class="border rounded text-black">
                             ${Array.from({ length: product.Stock + product.quantity }, (_, i) => `<option value="${i + 1}" ${product.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
                         </select>
                     </p>
@@ -210,7 +214,7 @@ function updateCart() {
         cartHTML += `<button id="buttonBuyProductsCart" onclick="showModal()" class="bg-green-500 text-white px-4 py-2 rounded mt-2">Buy</button>`;
     }
     cartHTML += `
-     <div class="p-4">Total: <span id="totalPrice" class="font-bold">${formatCurrency(total)}</span></div>
+     <div class="p-4 text-black">Total: <span id="totalPrice" class="font-bold">${formatCurrency(total)}</span></div>
     <button id="emptyCartButton" onclick="emptyCart()" class="bg-red-500 text-white px-4 py-2 rounded mt-2">Empty Cart</button>
     `;
     document.getElementById('cartProducts').innerHTML = cartHTML;
@@ -270,4 +274,3 @@ function updateQuantity(productId, quantity) {
         printCards(products); // Actualiza las tarjetas de productos para reflejar el cambio de stock
     }
 }
-
