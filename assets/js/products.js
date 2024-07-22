@@ -5,17 +5,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('emptyCartButton').addEventListener('click', emptyCart);
 });
 
-// function selectBrand(element) {
-//     // Comprueba si la marca ya estaba seleccionada
-//     if (element.classList.contains('selectedBrand')) {
-//         element.classList.remove('selectedBrand'); // Deselecciona la marca
-//     } else {
-//         // Deselecciona cualquier marca previamente seleccionada
-//         document.querySelectorAll('.selectedBrand').forEach(el => el.classList.remove('selectedBrand'));
-//         element.classList.add('selectedBrand'); // Selecciona la nueva marca
-//     }
-//     filterProducts(); // Actualiza los productos filtrados
-// }
+function selectBrand(element) {
+    // Comprueba si la marca ya estaba seleccionada
+    if (element.classList.contains('selectedBrand')) {
+        element.classList.remove('selectedBrand'); // Deselecciona la marca
+    } else {
+        // Deselecciona cualquier marca previamente seleccionada
+        document.querySelectorAll('.selectedBrand').forEach(el => el.classList.remove('selectedBrand'));
+        element.classList.add('selectedBrand'); // Selecciona la nueva marca
+    }
+    filterProducts(); // Actualiza los productos filtrados
+}
 
 function filterProducts() {
     let selectedBrandElement = document.querySelector('.selectedBrand');
@@ -39,7 +39,6 @@ function filterProducts() {
 let inputSearch = document.getElementById("searchName");
 let inputSearchNav = document.getElementById("searchNameNav");
 
-
 inputSearch.addEventListener("input", filterProducts);
 inputSearchNav.addEventListener("input", filterProducts);
 document.getElementById("priceMin").addEventListener("input", filterProducts);
@@ -59,30 +58,31 @@ function formatCurrency(amount) {
     return new Intl.NumberFormat('en-AR', { style: 'currency', currency: 'ARS' }).format(amount);
 }
 
-// Función para estructurar una tarjeta de producto
 function structureCard(id, img, product, brand, price, stock) {
     let stockMessage = '';
-    let addToCartButton = `<button onclick="addToCart(${id})" class="add-to-cart-btn">Añadir al Carrito</button>`;
+    let addToCartButton = `<button onclick="addToCart(${id})" class="bg-blue-500 text-white px-4 py-2 rounded mt-2">Añadir al Carrito</button>`;
 
     if (stock <= 0) {
-        stockMessage = '<span class="px-2 mb-4 text-xl text-red-500">Out of Stock!</span>';
-        addToCartButton = ''; // No mostrar el botón de añadir al carrito si no hay stock
+        stockMessage = '<span class="text-red-500">Out of Stock!</span>';
+        addToCartButton = '';
     } else if (stock <= 5) {
-        stockMessage = '<span class="px-2 mb-4 text-xl text-red-500">Last units!</span>';
+        stockMessage = '<span class="text-red-500">Last units!</span>';
     } else {
-        stockMessage = `<span class="px-2 mb-4 text-xl">Available Stock: ${stock}</span>`;
+        stockMessage = `<span>Available Stock: ${stock}</span>`;
     }
 
-    return `<article class="flex flex-col gap-2 justify-center bg-white px-2 py-2 rounded text-ellipsis border-2 border-gray-200 hover:shadow hover:shadow-gray-400 hover:shadow-xl">
-            <img class="w-[220px] h-[150px] rounded mb-2 border-black border-solid object-cover" src="${img}" alt="${product}, ${brand}" />
-            <hr class="border" />
-            <span class="font-bold pl-2 text-2xl mt-4">${price}</span>
-            <span class="px-2 mb-4 text-xl">${product}</span>
-            <span class="px-2 mb-4 text-xl">Brand: ${brand}</span>
-            ${stockMessage}
-            <a href="./search.html?id=${id}">Details Product</a>
-            ${addToCartButton}
-            </article>`;
+    return `
+        <article class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <img class="w-48 h-48 object-cover mb-4 rounded-lg" src="${img}" alt="${product}, ${brand}" />
+            <div class="text-center">
+                <span class="text-xl font-bold">${price}</span>
+                <span class="block text-lg">${product}</span>
+                <span class="block text-gray-600">Brand: ${brand}</span>
+                ${stockMessage}
+                <a href="./search.html?id=${id}" class="text-blue-500 hover:underline mt-2 block">Details Product</a>
+                ${addToCartButton}
+            </div>
+        </article>`;
 }
 
 // Función para imprimir tarjetas de productos
@@ -205,7 +205,9 @@ function updateCart() {
             </div>
         `;
     });
-    cartHTML += `<div class="p-4">Total: <span id="totalPrice" class="font-bold">${formatCurrency(total)}</span></div>
+    cartHTML += 
+     `<button id="buttonBuyProductsCart" onclick="showModal()" class="bg-green-500 text-white px-4 py-2 rounded mt-2">Buy</button>
+     <div class="p-4">Total: <span id="totalPrice" class="font-bold">${formatCurrency(total)}</span></div>
     <button id="emptyCartButton" onclick="emptyCart()" class="bg-red-500 text-white px-4 py-2 rounded mt-2">Empty Cart</button>
     `;
     document.getElementById('cartProducts').innerHTML = cartHTML;
