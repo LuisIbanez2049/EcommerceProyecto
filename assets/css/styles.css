@@ -212,7 +212,7 @@ h1[data-h1] {
   to {
     opacity: 1;
     transform: translateX(0);
-    font-size: 5vw;
+    font-size: 4vw;
     text-shadow: #000000a5 1px 0 10px;
   }
 }
@@ -298,6 +298,11 @@ h1[data-h1] {
   pointer-events: none;
 }
 
+.endFooter,
+.footerCategories {
+  display: none
+}
+
 @media only screen and (min-width: 640px) {
     .nav {
       flex-direction: row;
@@ -330,5 +335,10 @@ h1[data-h1] {
       
       .carousel-image {
         height: 30vw;
+      }
+
+      .endFooter,
+      .footerCategories{
+        display: flex
       }
   }
