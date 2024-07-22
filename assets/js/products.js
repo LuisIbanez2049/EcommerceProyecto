@@ -205,8 +205,11 @@ function updateCart() {
             </div>
         `;
     });
-    cartHTML += 
-     `<button id="buttonBuyProductsCart" onclick="showModal()" class="bg-green-500 text-white px-4 py-2 rounded mt-2">Buy</button>
+
+    if (cart.length > 0) {
+        cartHTML += `<button id="buttonBuyProductsCart" onclick="showModal()" class="bg-green-500 text-white px-4 py-2 rounded mt-2">Buy</button>`;
+    }
+    cartHTML += `
      <div class="p-4">Total: <span id="totalPrice" class="font-bold">${formatCurrency(total)}</span></div>
     <button id="emptyCartButton" onclick="emptyCart()" class="bg-red-500 text-white px-4 py-2 rounded mt-2">Empty Cart</button>
     `;
