@@ -42,7 +42,7 @@ if (objetoEncontrado) {
 
 // Show modal
 let buyButton = document.getElementById('buyButton');
-buyButton.addEventListener('click', function () {
+buyButton.addEventListener('click', function() {
     showModal();
 });
 
@@ -53,14 +53,14 @@ function showModal() {
 
 // Close modal
 let closeModal = document.getElementById('closeModal');
-closeModal.addEventListener('click', function () {
+closeModal.addEventListener('click', function() {
     let modal = document.getElementById('buyModal');
     modal.classList.add('hidden');
 });
 
 // Show payment methods image
 let paymentMethodsLink = document.getElementById('paymentMethodsLink');
-paymentMethodsLink.addEventListener('click', function (event) {
+paymentMethodsLink.addEventListener('click', function(event) {
     event.preventDefault();
     let paymentMethodsModal = document.getElementById('paymentMethodsModal');
     paymentMethodsModal.classList.remove('hidden');
@@ -68,18 +68,18 @@ paymentMethodsLink.addEventListener('click', function (event) {
 
 // Close payment methods modal
 let closePaymentMethods = document.getElementById('closePaymentMethods');
-closePaymentMethods.addEventListener('click', function () {
+closePaymentMethods.addEventListener('click', function() {
     let paymentMethodsModal = document.getElementById('paymentMethodsModal');
     paymentMethodsModal.classList.add('hidden');
 });
 
 let buttonAddCartDetails = document.getElementById('buttonAddCartDetails');
-buttonAddCartDetails.addEventListener('click', function () {
+buttonAddCartDetails.addEventListener('click', function() { 
     addToCart(id); // Asegurarse de que se pasa el id correcto del producto
 });
 
 let cartNavButtonDetails = document.getElementById('cartNavButtonDetails');
-cartNavButtonDetails.addEventListener('click', function () {
+cartNavButtonDetails.addEventListener('click', function() {
     document.getElementById('cartProductsDetails').classList.toggle('hidden');
 });
 
@@ -154,42 +154,43 @@ function updateProductDetailView(productId) {
     }
 }
 
+let cart = [];
+
 function updateCart() {
     let cartHTML = '';
     let total = 0;
     cart.forEach(product => {
         total += product['Precio (ARS)'] * product.quantity;
         cartHTML += `
-            <div class="flex items-center justify-between p-2 m-2 bg-gray-200 rounded-lg">
+            <div class="flex items-center justify-between text-white p-2 m-2 bg-gray-600 rounded-lg>
                 <img src="${product['URL de Foto']}" alt="${product['Tipo de Producto']}" class="w-12 h-12 rounded mr-2">
                 <div class="flex-grow">
-                <p class="font-bold">${product['Tipo de Producto']}</p>
-                <p>Brand: ${product.Marca}</p> 
-                <p>Price: ${formatCurrency(product['Precio (ARS)'])}</p>
-            <p>
-                 Quantity:
-                        <select onchange="updateQuantity(${product.ID}, this.value)" class="border rounded">
-                            ${Array.from({ length: product.Stock + product.quantity }, (_, i) => `<option value="${i + 1}" ${product.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
+                    <p class="font-bold">${product['Tipo de Producto']}</p> 
+                    <p>Price:  ${formatCurrency2(product['Precio (ARS)'])}</p>
+                   <p>Brand: ${product.Marca}</p>
+                <p>
+                        Quantity:
+                        <select onchange="updateQuantity(${product.ID}, this.value)" class="border rounded text-black">
+                        ${Array.from({ length: product.Stock + product.quantity }, (_, i) => `<option value="${i + 1}" ${product.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
                         </select>
                     </p>
-                 </div>
+                </div>
                 <button onclick="removeFromCart(${product.ID})" class="bg-red-500 text-white px-2 py-1 rounded">X</button>
             </div>`;
     });
-    cartHTML += `<div>Total: $<span id="totalPrice">${formatCurrency2(total)}</span></div>`;
-
-    // Verifica si el carrito no está vacío para agregar el botón de compra
     if (cart.length > 0) {
-        cartHTML += `<button id="checkoutButton" onclick="showModal()">Buy cart</button>`;
+        cartHTML += `<button id="checkoutButton" onclick="showModal()" class="bg-green-500 text-white px-4 py-2 rounded mt-2">Buy</button>`;
     }
-
-    cartHTML += `<button id="emptyCartButton" onclick="emptyCart()">Empty Cart</button>
-`;
+    cartHTML += `
+     <div class="p-4 text-black">Total: <span id="totalPrice" class="font-bold">${formatCurrency2(total)}</span></div>
+    <button id="emptyCartButton" onclick="emptyCart()" class="bg-red-500 text-white px-4 py-2 rounded mt-2">Empty Cart</button>
+    `;
     document.getElementById('cartProductsDetails').innerHTML = cartHTML; // Actualizar el contenedor correcto
 }
+
 // Asegúrate de definir la función checkout() para manejar la lógica de compra
 let buyButtonCart = document.getElementById('buyButton');
-buyButton.addEventListener('click', function () {
+buyButton.addEventListener('click', function() {
     showModal();
 });
 
