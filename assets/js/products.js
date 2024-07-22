@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     // Asegúrate de que esta línea se ejecute después de que el array de productos esté definido
     printCards(products); // Carga inicial de todas las tarjetas
@@ -39,7 +39,6 @@ function filterProducts() {
 let inputSearch = document.getElementById("searchName");
 let inputSearchNav = document.getElementById("searchNameNav");
 
-
 inputSearch.addEventListener("input", filterProducts);
 inputSearchNav.addEventListener("input", filterProducts);
 document.getElementById("priceMin").addEventListener("input", filterProducts);
@@ -47,7 +46,7 @@ document.getElementById("priceMax").addEventListener("input", filterProducts);
 // Obtener todas las imágenes que representan marcas y añadir el escuchador de eventos
 const marcaImages = document.querySelectorAll('img[data-marca]');
 marcaImages.forEach(image => {
-    image.addEventListener('click', function(event) {
+    image.addEventListener('click', function (event) {
         marcaImages.forEach(img => img.classList.remove('selected')); // Remover la clase 'selected' de todas las imágenes
         event.target.classList.add('selected'); // Añadir la clase 'selected' a la imagen clickeada
         filterProducts(); // Filtrar productos con la marca seleccionada
@@ -59,30 +58,31 @@ function formatCurrency(amount) {
     return new Intl.NumberFormat('en-AR', { style: 'currency', currency: 'ARS' }).format(amount);
 }
 
-// Función para estructurar una tarjeta de producto
 function structureCard(id, img, product, brand, price, stock) {
     let stockMessage = '';
-    let addToCartButton = `<button onclick="addToCart(${id})" class="add-to-cart-btn">Añadir al Carrito</button>`;
+    let addToCartButton = `<button onclick="addToCart(${id})" class="bg-blue-500 text-white px-4 py-2 rounded mt-2">Añadir al Carrito</button>`;
 
     if (stock <= 0) {
-        stockMessage = '<span class="px-2 mb-4 text-xl text-red-500">Out of Stock!</span>';
-        addToCartButton = ''; // No mostrar el botón de añadir al carrito si no hay stock
+        stockMessage = '<span class="text-red-500">Out of Stock!</span>';
+        addToCartButton = '';
     } else if (stock <= 5) {
-        stockMessage = '<span class="px-2 mb-4 text-xl text-red-500">Last units!</span>';
+        stockMessage = '<span class="text-red-500">Last units!</span>';
     } else {
-        stockMessage = `<span class="px-2 mb-4 text-xl">Available Stock: ${stock}</span>`;
+        stockMessage = `<span>Available Stock: ${stock}</span>`;
     }
 
-    return `<article class="flex flex-col gap-2 justify-center bg-white px-2 py-2 rounded text-ellipsis border-2 border-gray-200 hover:shadow hover:shadow-gray-400 hover:shadow-xl">
-            <img class="w-[220px] h-[150px] rounded mb-2 border-black border-solid object-cover" src="${img}" alt="${product}, ${brand}" />
-            <hr class="border" />
-            <span class="font-bold pl-2 text-2xl mt-4">${price}</span>
-            <span class="px-2 mb-4 text-xl">${product}</span>
-            <span class="px-2 mb-4 text-xl">Brand: ${brand}</span>
-            ${stockMessage}
-            <a href="./search.html?id=${id}">Details Product</a>
-            ${addToCartButton}
-            </article>`;
+    return `
+        <article class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <img class="w-48 h-48 object-cover mb-4 rounded-lg" src="${img}" alt="${product}, ${brand}" />
+            <div class="text-center">
+                <span class="text-xl font-bold">${price}</span>
+                <span class="block text-lg">${product}</span>
+                <span class="block text-gray-600">Brand: ${brand}</span>
+                ${stockMessage}
+                <a href="./search.html?id=${id}" class="text-blue-500 hover:underline mt-2 block">Details Product</a>
+                ${addToCartButton}
+            </div>
+        </article>`;
 }
 
 // Función para imprimir tarjetas de productos
@@ -102,7 +102,7 @@ function printCards(products) {
 }
 
 // Paso 1: Desplegar el Carrito
-document.getElementById('cartNavButton').addEventListener('click', function() {
+document.getElementById('cartNavButton').addEventListener('click', function () {
     document.getElementById('cartProducts').classList.toggle('hidden');
 });
 
@@ -171,26 +171,66 @@ function addToCart(productId) {
 
 let cart = [];
 
+document.addEventListener('DOMContentLoaded', function () {
+    const checkoutButton = document.getElementById('checkoutButtonProducts');
+    const buyModal = document.getElementById('buyModal');
+    const closeModal = document.getElementById('closeModal');
+
+    checkoutButton.addEventListener('click', function () {
+        buyModal.classList.remove('hidden');
+    });
+  
+});
+
 function updateCart() {
     let cartHTML = '';
     let total = 0;
     cart.forEach(product => {
         total += product['Precio (ARS)'] * product.quantity;
         cartHTML += `
-            <div class="cart-item">
-                <img src="${product['URL de Foto']}" alt="${product['Tipo de Producto']}" style="width: 50px; height: auto;">
-                ${product['Tipo de Producto']} - ${formatCurrency(product['Precio (ARS)'])} - Brand: ${product.Marca}
-                <select onchange="updateQuantity(${product.ID}, this.value)">` +
-            Array.from({ length: product.Stock + product.quantity }, (_, i) => `<option value="${i + 1}" ${product.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('') +
-            `</select>
-                <button onclick="removeFromCart(${product.ID})">X</button>
-            </div>`;
+            <div class="flex items-center justify-between p-2 m-2 bg-gray-200 rounded-lg">
+                <img src="${product['URL de Foto']}" alt="${product['Tipo de Producto']}" class="w-12 h-12 rounded mr-2">
+                <div class="flex-grow">
+                    <p class="font-bold">${product['Tipo de Producto']}</p>
+                    <p>Brand: ${product.Marca}</p>
+                    <p>Price: ${formatCurrency(product['Precio (ARS)'])}</p>
+                    <p>
+                        Quantity:
+                        <select onchange="updateQuantity(${product.ID}, this.value)" class="border rounded">
+                            ${Array.from({ length: product.Stock + product.quantity }, (_, i) => `<option value="${i + 1}" ${product.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
+                        </select>
+                    </p>
+                </div>
+                <button onclick="removeFromCart(${product.ID})" class="bg-red-500 text-white px-2 py-1 rounded">X</button>
+            </div>
+        `;
     });
-    cartHTML += `<div>Total: $<span id="totalPrice">${formatCurrency(total)}</span></div>
-    <button id="emptyCartButton" onclick="emptyCart()">Empty Cart</button>
-`;
+
+    if (cart.length > 0) {
+        cartHTML += `<button id="buttonBuyProductsCart" onclick="showModal()" class="bg-green-500 text-white px-4 py-2 rounded mt-2">Buy</button>`;
+    }
+    cartHTML += `
+     <div class="p-4">Total: <span id="totalPrice" class="font-bold">${formatCurrency(total)}</span></div>
+    <button id="emptyCartButton" onclick="emptyCart()" class="bg-red-500 text-white px-4 py-2 rounded mt-2">Empty Cart</button>
+    `;
     document.getElementById('cartProducts').innerHTML = cartHTML;
 }
+
+function showModal() {
+    let modal = document.getElementById('buyModal');
+    if (modal) {
+        modal.classList.remove('hidden');
+    }
+}
+
+// Close modal
+let closeModal = document.getElementById('closeModal');
+closeModal.addEventListener('click', function() {
+    let modal = document.getElementById('buyModal');
+    modal.classList.add('hidden');
+});
+
+
 
 function removeFromCart(productId) {
     const productIndex = cart.findIndex(product => product.ID === productId);
@@ -231,17 +271,3 @@ function updateQuantity(productId, quantity) {
     }
 }
 
-// // Event listeners para la búsqueda dinámica
-// inputSearch.addEventListener("input", filterProducts);
-// document.getElementById("priceMin").addEventListener("input", filterProducts);
-// document.getElementById("priceMax").addEventListener("input", filterProducts);
-
-// // Obtener todas las imágenes que representan marcas y añadirles un event listener
-// const brandImages = document.querySelectorAll('img[data-brand]');
-// brandImages.forEach(image => {
-//     image.addEventListener('click', function (event) {
-//         brandImages.forEach(img => img.classList.remove('selected')); // Elimina la clase 'selected' de todas las imágenes
-//         event.target.classList.add('selected'); // Añade la clase 'selected' a la imagen clickeada
-//         filterProducts(); // Filtra los productos con la marca seleccionada
-//     });
-// });
