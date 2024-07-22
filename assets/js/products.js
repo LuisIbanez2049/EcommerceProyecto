@@ -1,21 +1,21 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     // Asegúrate de que esta línea se ejecute después de que el array de productos esté definido
     printCards(products); // Carga inicial de todas las tarjetas
     document.getElementById('emptyCartButton').addEventListener('click', emptyCart);
 });
 
-function selectBrand(element) {
-    // Comprueba si la marca ya estaba seleccionada
-    if (element.classList.contains('selectedBrand')) {
-        element.classList.remove('selectedBrand'); // Deselecciona la marca
-    } else {
-        // Deselecciona cualquier marca previamente seleccionada
-        document.querySelectorAll('.selectedBrand').forEach(el => el.classList.remove('selectedBrand'));
-        element.classList.add('selectedBrand'); // Selecciona la nueva marca
-    }
-    filterProducts(); // Actualiza los productos filtrados
-}
+// function selectBrand(element) {
+//     // Comprueba si la marca ya estaba seleccionada
+//     if (element.classList.contains('selectedBrand')) {
+//         element.classList.remove('selectedBrand'); // Deselecciona la marca
+//     } else {
+//         // Deselecciona cualquier marca previamente seleccionada
+//         document.querySelectorAll('.selectedBrand').forEach(el => el.classList.remove('selectedBrand'));
+//         element.classList.add('selectedBrand'); // Selecciona la nueva marca
+//     }
+//     filterProducts(); // Actualiza los productos filtrados
+// }
 
 function filterProducts() {
     let selectedBrandElement = document.querySelector('.selectedBrand');
@@ -47,7 +47,7 @@ document.getElementById("priceMax").addEventListener("input", filterProducts);
 // Obtener todas las imágenes que representan marcas y añadir el escuchador de eventos
 const marcaImages = document.querySelectorAll('img[data-marca]');
 marcaImages.forEach(image => {
-    image.addEventListener('click', function(event) {
+    image.addEventListener('click', function (event) {
         marcaImages.forEach(img => img.classList.remove('selected')); // Remover la clase 'selected' de todas las imágenes
         event.target.classList.add('selected'); // Añadir la clase 'selected' a la imagen clickeada
         filterProducts(); // Filtrar productos con la marca seleccionada
@@ -102,7 +102,7 @@ function printCards(products) {
 }
 
 // Paso 1: Desplegar el Carrito
-document.getElementById('cartNavButton').addEventListener('click', function() {
+document.getElementById('cartNavButton').addEventListener('click', function () {
     document.getElementById('cartProducts').classList.toggle('hidden');
 });
 
@@ -171,6 +171,17 @@ function addToCart(productId) {
 
 let cart = [];
 
+document.addEventListener('DOMContentLoaded', function () {
+    const checkoutButton = document.getElementById('checkoutButtonProducts');
+    const buyModal = document.getElementById('buyModal');
+    const closeModal = document.getElementById('closeModal');
+
+    checkoutButton.addEventListener('click', function () {
+        buyModal.classList.remove('hidden');
+    });
+  
+});
+
 function updateCart() {
     let cartHTML = '';
     let total = 0;
@@ -186,11 +197,28 @@ function updateCart() {
                 <button onclick="removeFromCart(${product.ID})">X</button>
             </div>`;
     });
-    cartHTML += `<div>Total: $<span id="totalPrice">${formatCurrency(total)}</span></div>
-    <button id="emptyCartButton" onclick="emptyCart()">Empty Cart</button>
-`;
+    if (cart.length > 0) {
+        cartHTML += `<button id="checkoutButtonProducts" onclick="showModal()">Buy cart</button>`;
+    }
+    cartHTML += `<button id="emptyCartButton" onclick="emptyCart()">Empty Cart</button>`;
     document.getElementById('cartProducts').innerHTML = cartHTML;
 }
+
+function showModal() {
+    let modal = document.getElementById('buyModal');
+    if (modal) {
+        modal.classList.remove('hidden');
+    }
+}
+
+// Close modal
+let closeModal = document.getElementById('closeModal');
+closeModal.addEventListener('click', function() {
+    let modal = document.getElementById('buyModal');
+    modal.classList.add('hidden');
+});
+
+
 
 function removeFromCart(productId) {
     const productIndex = cart.findIndex(product => product.ID === productId);
@@ -231,17 +259,3 @@ function updateQuantity(productId, quantity) {
     }
 }
 
-// // Event listeners para la búsqueda dinámica
-// inputSearch.addEventListener("input", filterProducts);
-// document.getElementById("priceMin").addEventListener("input", filterProducts);
-// document.getElementById("priceMax").addEventListener("input", filterProducts);
-
-// // Obtener todas las imágenes que representan marcas y añadirles un event listener
-// const brandImages = document.querySelectorAll('img[data-brand]');
-// brandImages.forEach(image => {
-//     image.addEventListener('click', function (event) {
-//         brandImages.forEach(img => img.classList.remove('selected')); // Elimina la clase 'selected' de todas las imágenes
-//         event.target.classList.add('selected'); // Añade la clase 'selected' a la imagen clickeada
-//         filterProducts(); // Filtra los productos con la marca seleccionada
-//     });
-// });
