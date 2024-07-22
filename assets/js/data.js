@@ -122,7 +122,7 @@ const products = [
     {
         "ID": 13,
         "Marca": "Corsair",
-        "Tipo de Producto": "Teclado Mecánico",
+        "Tipo de Producto": "Mechanical Keyboard",
         "Modelo": "K95 RGB Platinum",
         "Detalles": "Cherry MX Speed, RGB Lighting",
         "URL de Foto": "https://imgs.search.brave.com/Ro74YGful0Fa948xG9te_24KUDvvxF8aNp2klbZcEPM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFuaVFpS0w5bEwu/anBn",
@@ -132,7 +132,7 @@ const products = [
     {
         "ID": 14,
         "Marca": "Razer",
-        "Tipo de Producto": "Teclado Mecánico",
+        "Tipo de Producto": "Mechanical Keyboard",
         "Modelo": "BlackWidow Elite",
         "Detalles": "Green Switch, RGB Lighting",
         "URL de Foto": "https://imgs.search.brave.com/z_qMBODjTl-oMb_vBJrHFlnm7aKYIt_LCkxAv-36GWM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFseFFnSjhCNkwu/anBn",
@@ -142,7 +142,7 @@ const products = [
     {
         "ID": 15,
         "Marca": "Logitech",
-        "Tipo de Producto": "Teclado Mecánico",
+        "Tipo de Producto": "Mechanical Keyboard",
         "Modelo": "G Pro X",
         "Detalles": "Customizable Switches, RGB Lighting",
         "URL de Foto": "https://imgs.search.brave.com/TpVHdCqVrNUry_feDcDL9QSRSqLW7HZEyqY1aHRl5p8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFmdkpYZlBzOUwu/anBn",
@@ -152,7 +152,7 @@ const products = [
     {
         "ID": 16,
         "Marca": "HyperX",
-        "Tipo de Producto": "Teclado Mecánico",
+        "Tipo de Producto": "Mechanical Keyboard",
         "Modelo": "Alloy FPS Pro",
         "Detalles": "Red Switch, Compact Design",
         "URL de Foto": "https://imgs.search.brave.com/U4yCyY7q_JQXWBrVH3H7gUHBtw4MrhhWdOdg2x_fq4U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF82/ODI2NzItTUxBMzE5/ODA0NTc3ODJfMDgy/MDE5LU8ud2VicA",
@@ -162,7 +162,7 @@ const products = [
     {
         "ID": 17,
         "Marca": "SteelSeries",
-        "Tipo de Producto": "Teclado Mecánico",
+        "Tipo de Producto": "Mechanical Keyboard",
         "Modelo": "Apex Pro",
         "Detalles": "Adjustable Mechanical Switches, RGB",
         "URL de Foto": "https://imgs.search.brave.com/EWzVN0DGqF9XfMNt2aC0TZ_knwyo-uxSbN1Xf2NMuJs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxYURaR0RPd2xM/LmpwZw",
@@ -172,7 +172,7 @@ const products = [
     {
         "ID": 18,
         "Marca": "Asus",
-        "Tipo de Producto": "Teclado Mecánico",
+        "Tipo de Producto": "Mechanical Keyboard",
         "Modelo": "ROG Strix Scope",
         "Detalles": "Cherry MX Red, RGB Lighting",
         "URL de Foto": "https://imgs.search.brave.com/_yRa6rMLZMqcFAO2G5UMw7P8yh_IhYnSsLaqCynZo1A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFqUG92bk5yLUwu/anBn",
@@ -242,8 +242,8 @@ const products = [
     {
         "ID": 25,
         "Marca": "Kingston",
-        "Tipo de Producto": "Disco Sólido",
-        "Modelo": "Disco Sólido Interno Kingston Sa400s37/960g Sata 960gb Negro",
+        "Tipo de Producto": "SSD",
+        "Modelo": "SSD Kingston Sa400s37/960g Sata 960gb black",
         "Detalles": "960GB Sa400s37/960g",
         "URL de Foto": "https://http2.mlstatic.com/D_NQ_NP_2X_904375-MLA72445223422_102023-F.webp",
         "Precio (ARS)": 89200,
@@ -252,7 +252,7 @@ const products = [
     {
         "ID": 26,
         "Marca": "Corsair",
-        "Tipo de Producto": "Memoria RAM",
+        "Tipo de Producto": "RAM",
         "Modelo": "Vengeance LPX 16GB",
         "Detalles": "16GB DDR4, 3200MHz",
         "URL de Foto": "https://imgs.search.brave.com/RisoLlV5B0rGq27beuU7aRLM7G5vXG0gENj-gPL9Y_I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzE3RCtGd3JtSEwu/anBn",
@@ -262,7 +262,7 @@ const products = [
     {
         "ID": 27,
         "Marca": "G.Skill",
-        "Tipo de Producto": "Memoria RAM",
+        "Tipo de Producto": "RAM",
         "Modelo": "Trident Z RGB 16GB",
         "Detalles": "16GB DDR4, 3200MHz",
         "URL de Foto": "https://imgs.search.brave.com/k5IgZCXSxsS3lPX_G-EXFLqNxfs3Rh_m4ZNkm-wzdZo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kcnI2/MjJ3dWN0bjI2LmNs/b3VkZnJvbnQubmV0/L2ltYWdlL2NhY2hl/L2NhdGFsb2cvbWVt/b3J5L2clMjBza2ls/bC9mNC0zMjAwYzE2/ZC0xNmd0enIvZy1z/a2lsbC10cmlkZW50/LXotcmdiLWRkcjRm/NC0zMjAwYzE2ZC0x/Nmd0enItNjQ2Ni02/MDB4NjAwLmpwZw",
@@ -272,7 +272,7 @@ const products = [
     {
         "ID": 28,
         "Marca": "Crucial",
-        "Tipo de Producto": "Memoria RAM",
+        "Tipo de Producto": "RAM",
         "Modelo": "Ballistix 16GB",
         "Detalles": "16GB DDR4, 3200MHz",
         "URL de Foto": "https://imgs.search.brave.com/LVgFtBuWcQIDVffc0KKN6XaTgQCmS-9OLfonxIz-C-8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzF2UTZEZ1BQMEwu/anBn",
@@ -282,7 +282,7 @@ const products = [
     {
         "ID": 29,
         "Marca": "Adata",
-        "Tipo de Producto": "Memoria RAM",
+        "Tipo de Producto": "RAM",
         "Modelo": "XPG Spectrix D60G 16GB",
         "Detalles": "16GB DDR4, 3200MHz",
         "URL de Foto": "https://imgs.search.brave.com/P63wFsC8VyleZibbdDXybD2ZYkCStWcaK7i26vRJniE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxczZXZzdCY3FM/LmpwZw",
@@ -292,7 +292,7 @@ const products = [
     {
         "ID": 30,
         "Marca": "Samsung",
-        "Tipo de Producto": "Memoria RAM",
+        "Tipo de Producto": "RAM",
         "Modelo": "16GB DDR4",
         "Detalles": "16GB DDR4, 3200MHz",
         "URL de Foto": "https://imgs.search.brave.com/pD5QcDsTu82gETgNv6aPDxn2z2yUdLykFkJmGuESSBE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFDM2QyNU9uekwu/anBn",

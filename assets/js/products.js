@@ -31,7 +31,9 @@ function filterProducts() {
     printCards(filteredProducts);
 }
 
-// Asegurarse de que los event listeners estén correctamente asignados
+
+
+
 let inputSearch = document.getElementById("searchName");
 let inputSearchNav = document.getElementById("searchNameNav");
 
