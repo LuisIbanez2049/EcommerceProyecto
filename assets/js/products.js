@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('emptyCartButton').addEventListener('click', emptyCart);
 });
 
-let inputSearch = document.getElementById("searchName");
-
 function selectBrand(element) {
     if (element.classList.contains('selectedBrand')) {
         element.classList.remove('selectedBrand');
@@ -18,13 +16,14 @@ function selectBrand(element) {
 function filterProducts() {
     let selectedBrandElement = document.querySelector('.selectedBrand');
     let marcsSelected = selectedBrandElement ? selectedBrandElement.getAttribute('data-marca') : null;
+    let nameSearchNav = document.getElementById("searchNameNav").value.trim().toLowerCase();
     let nameSearch = document.getElementById("searchName").value.trim().toLowerCase();
     let priceMin = Number(document.getElementById("priceMin").value) || 0;
     let priceMax = Number(document.getElementById("priceMax").value) || Number.MAX_SAFE_INTEGER;
 
     let filteredProducts = products.filter(product => {
-        let matchesMarca = !marcsSelected || product.Marca === marcsSelected;
-        let matchesName = nameSearch === '' || product['Tipo de Producto'].toLowerCase().includes(nameSearch);
+        let matchesMarca = !marcsSelected || product.Marca.toLowerCase() === marcsSelected.toLowerCase();
+        let matchesName = (nameSearch === '' || product['Tipo de Producto'].toLowerCase().includes(nameSearch) || product['Marca'].toLowerCase().includes(nameSearch)) && (nameSearchNav === '' || product['Marca'].toLowerCase().includes(nameSearchNav) || product['Tipo de Producto'].toLowerCase().includes(nameSearchNav));
         let matchesPrice = (!priceMin || product['Precio (ARS)'] >= priceMin) && (!priceMax || product['Precio (ARS)'] <= priceMax);
         return matchesMarca && matchesName && matchesPrice;
     });
@@ -32,10 +31,16 @@ function filterProducts() {
     printCards(filteredProducts);
 }
 
+// Asegurarse de que los event listeners estén correctamente asignados
+let inputSearch = document.getElementById("searchName");
+let inputSearchNav = document.getElementById("searchNameNav");
+
+
 inputSearch.addEventListener("input", filterProducts);
+inputSearchNav.addEventListener("input", filterProducts);
 document.getElementById("priceMin").addEventListener("input", filterProducts);
 document.getElementById("priceMax").addEventListener("input", filterProducts);
-
+// Obtener todas las imágenes que representan marcas y añadir el escuchador de eventos
 const marcaImages = document.querySelectorAll('img[data-marca]');
 marcaImages.forEach(image => {
     image.addEventListener('click', function(event) {
@@ -76,12 +81,14 @@ function structureCard(id, img, product, brand, price, stock) {
         </article>`;
 }
 
+// Función para imprimir tarjetas de productos
 function printCards(products) {
     let containerProducts = document.getElementById("containerProducts");
     let cards = "";
     if (products.length === 0) {
-        containerProducts.innerHTML = `<p class="text-center text-red-500">¡Resultados no encontrados!</p>`;
-        return;
+        // Si no hay productos, muestra un mensaje de "Results not found!"
+        containerProducts.innerHTML = `<p>Results not found!</p>`;
+        return; // Termina la ejecución de la función aquí
     }
     products.forEach(product => {
         const priceProduct = formatCurrency(product["Precio (ARS)"]);
@@ -227,17 +234,17 @@ function updateQuantity(productId, quantity) {
     }
 }
 
-// Event listeners para la búsqueda dinámica
-inputSearch.addEventListener("input", filterProducts);
-document.getElementById("priceMin").addEventListener("input", filterProducts);
-document.getElementById("priceMax").addEventListener("input", filterProducts);
+// // Event listeners para la búsqueda dinámica
+// inputSearch.addEventListener("input", filterProducts);
+// document.getElementById("priceMin").addEventListener("input", filterProducts);
+// document.getElementById("priceMax").addEventListener("input", filterProducts);
 
-// Obtener todas las imágenes que representan marcas y añadirles un event listener
-const brandImages = document.querySelectorAll('img[data-brand]');
-brandImages.forEach(image => {
-    image.addEventListener('click', function (event) {
-        brandImages.forEach(img => img.classList.remove('selected')); // Elimina la clase 'selected' de todas las imágenes
-        event.target.classList.add('selected'); // Añade la clase 'selected' a la imagen clickeada
-        filterProducts(); // Filtra los productos con la marca seleccionada
-    });
-});
+// // Obtener todas las imágenes que representan marcas y añadirles un event listener
+// const brandImages = document.querySelectorAll('img[data-brand]');
+// brandImages.forEach(image => {
+//     image.addEventListener('click', function (event) {
+//         brandImages.forEach(img => img.classList.remove('selected')); // Elimina la clase 'selected' de todas las imágenes
+//         event.target.classList.add('selected'); // Añade la clase 'selected' a la imagen clickeada
+//         filterProducts(); // Filtra los productos con la marca seleccionada
+//     });
+// });
