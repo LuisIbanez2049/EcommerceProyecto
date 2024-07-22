@@ -53,6 +53,10 @@ main {
     display: block;
 }
 
+/* .hidden {
+    display: none;
+} */
+
 .carousel-image {
     justify-content: center;
     position: absolute;

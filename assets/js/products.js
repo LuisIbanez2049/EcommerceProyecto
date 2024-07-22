@@ -1,16 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Asegúrate de que esta línea se ejecute después de que el array de productos esté definido
     printCards(products); // Carga inicial de todas las tarjetas
     document.getElementById('emptyCartButton').addEventListener('click', emptyCart);
 });
 
 function selectBrand(element) {
+    // Comprueba si la marca ya estaba seleccionada
     if (element.classList.contains('selectedBrand')) {
-        element.classList.remove('selectedBrand');
+        element.classList.remove('selectedBrand'); // Deselecciona la marca
     } else {
+        // Deselecciona cualquier marca previamente seleccionada
         document.querySelectorAll('.selectedBrand').forEach(el => el.classList.remove('selectedBrand'));
-        element.classList.add('selectedBrand');
+        element.classList.add('selectedBrand'); // Selecciona la nueva marca
     }
-    filterProducts();
+    filterProducts(); // Actualiza los productos filtrados
 }
 
 function filterProducts() {
@@ -35,7 +39,6 @@ function filterProducts() {
 let inputSearch = document.getElementById("searchName");
 let inputSearchNav = document.getElementById("searchNameNav");
 
-
 inputSearch.addEventListener("input", filterProducts);
 inputSearchNav.addEventListener("input", filterProducts);
 document.getElementById("priceMin").addEventListener("input", filterProducts);
@@ -43,13 +46,14 @@ document.getElementById("priceMax").addEventListener("input", filterProducts);
 // Obtener todas las imágenes que representan marcas y añadir el escuchador de eventos
 const marcaImages = document.querySelectorAll('img[data-marca]');
 marcaImages.forEach(image => {
-    image.addEventListener('click', function(event) {
-        marcaImages.forEach(img => img.classList.remove('selected'));
-        event.target.classList.add('selected');
-        filterProducts();
+    image.addEventListener('click', function (event) {
+        marcaImages.forEach(img => img.classList.remove('selected')); // Remover la clase 'selected' de todas las imágenes
+        event.target.classList.add('selected'); // Añadir la clase 'selected' a la imagen clickeada
+        filterProducts(); // Filtrar productos con la marca seleccionada
     });
 });
 
+// Corrección en la función de formato de moneda
 function formatCurrency(amount) {
     return new Intl.NumberFormat('en-AR', { style: 'currency', currency: 'ARS' }).format(amount);
 }
@@ -97,28 +101,25 @@ function printCards(products) {
     containerProducts.innerHTML = cards;
 }
 
-document.getElementById('cartNavButton').addEventListener('click', function() {
+// Paso 1: Desplegar el Carrito
+document.getElementById('cartNavButton').addEventListener('click', function () {
     document.getElementById('cartProducts').classList.toggle('hidden');
 });
 
+// Función para mostrar los productos en el carrito
 function displayCartItems() {
     const cartContainer = document.getElementById('cartProducts');
-    cartContainer.innerHTML = '';
+    cartContainer.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevos elementos
 
     cartItems.forEach(item => {
         const itemHTML = `
-            <div class="flex items-center bg-gray-100 p-4 rounded-lg mb-4">
-                <img src="${item['URL de Foto']}" alt="${item['Tipo de Producto']}" class="w-20 h-20 rounded mr-4">
-                <div class="flex-grow">
+            <div class="flex flex-row justify-between items-center bg-gray-100 p-2 m-2 rounded">
+                <img src="${item['URL de Foto']}" alt="${item['Tipo de Producto']}" class="w-20 h-20 rounded">
+                <div>
                     <p>${item['Tipo de Producto']}</p>
                     <p>Brand: ${item.Marca}</p>
-                    <p>Price: ${formatCurrency(item["Precio (ARS)"])}</p>
-                    <p>
-                        Amount: 
-                        <button onclick="decreaseQuantity(${item.ID})" class="px-2">-</button> 
-                        ${item.quantity} 
-                        <button onclick="increaseQuantity(${item.ID})" class="px-2">+</button>
-                    </p>
+                    <p>Price: ${item["Precio (ARS)"]}</p>
+                    <p>Amount: <button onclick="decreaseQuantity(${item.ID})">-</button> ${item.quantity} <button onclick="increaseQuantity(${item.ID})">+</button></p>
                     <p>Available Stock: ${item.Stock}</p>
                 </div>
             </div>
@@ -127,30 +128,34 @@ function displayCartItems() {
     });
 }
 
+// Funciones para actualizar la cantidad de productos en el carrito
 function increaseQuantity(productId) {
-    const product = cartItems.find(item => item.ID === productId);
+    const product = cartItems.find(item => item.id === productId);
     if (product.quantity < product.Stock) {
         product.quantity++;
-        displayCartItems();
+        displayCartItems(); // Actualizar la visualización del carrito
     }
 }
 
 function decreaseQuantity(productId) {
-    const product = cartItems.find(item => item.ID === productId);
+    const product = cartItems.find(item => item.id === productId);
     if (product.quantity > 1) {
         product.quantity--;
-        displayCartItems();
+        displayCartItems(); // Actualizar la visualización del carrito
     }
 }
 
+// Inicializar la visualización del carrito al cargar la página
 document.addEventListener('DOMContentLoaded', displayCartItems);
 
+
+// Añadir producto al carrito
 function addToCart(productId) {
-    const id = parseInt(productId, 10);
+    const id = parseInt(productId, 10); // Convierte a número si es necesario
     const product = products.find(product => product.ID === id);
 
     if (product && product.Stock > 0) {
-        product.Stock--;
+        product.Stock--; // Decrementa el stock
         let productInCart = cart.find(item => item.ID === id);
 
         if (productInCart) {
@@ -160,11 +165,22 @@ function addToCart(productId) {
             cart.push(productToAdd);
         }
         updateCart();
-        printCards(products);
+        printCards(products); // Actualiza las tarjetas de productos para reflejar el cambio de stock
     }
 }
 
 let cart = [];
+
+document.addEventListener('DOMContentLoaded', function () {
+    const checkoutButton = document.getElementById('checkoutButtonProducts');
+    const buyModal = document.getElementById('buyModal');
+    const closeModal = document.getElementById('closeModal');
+
+    checkoutButton.addEventListener('click', function () {
+        buyModal.classList.remove('hidden');
+    });
+  
+});
 
 function updateCart() {
     let cartHTML = '';
@@ -189,21 +205,39 @@ function updateCart() {
             </div>
         `;
     });
-    cartHTML += `<div class="p-4">Total: <span id="totalPrice" class="font-bold">${formatCurrency(total)}</span></div>
+    cartHTML += 
+     `<button id="buttonBuyProductsCart" onclick="showModal()" class="bg-green-500 text-white px-4 py-2 rounded mt-2">Buy</button>
+     <div class="p-4">Total: <span id="totalPrice" class="font-bold">${formatCurrency(total)}</span></div>
     <button id="emptyCartButton" onclick="emptyCart()" class="bg-red-500 text-white px-4 py-2 rounded mt-2">Empty Cart</button>
     `;
     document.getElementById('cartProducts').innerHTML = cartHTML;
 }
+
+function showModal() {
+    let modal = document.getElementById('buyModal');
+    if (modal) {
+        modal.classList.remove('hidden');
+    }
+}
+
+// Close modal
+let closeModal = document.getElementById('closeModal');
+closeModal.addEventListener('click', function() {
+    let modal = document.getElementById('buyModal');
+    modal.classList.add('hidden');
+});
+
+
 
 function removeFromCart(productId) {
     const productIndex = cart.findIndex(product => product.ID === productId);
     if (productIndex !== -1) {
         const product = products.find(product => product.ID === productId);
         if (product) {
-            product.Stock += cart[productIndex].quantity;
-            cart.splice(productIndex, 1);
+            product.Stock += cart[productIndex].quantity; // Incrementa el stock
+            cart.splice(productIndex, 1); // Elimina el producto del carrito
             updateCart();
-            printCards(products);
+            printCards(products); // Actualiza las tarjetas de productos para reflejar el cambio de stock
         }
     }
 }
@@ -212,12 +246,12 @@ function emptyCart() {
     cart.forEach(productInCart => {
         const product = products.find(product => product.ID === productInCart.ID);
         if (product) {
-            product.Stock += productInCart.quantity;
+            product.Stock += productInCart.quantity; // Restaura el stock
         }
     });
     cart = [];
     updateCart();
-    printCards(products);
+    printCards(products); // Actualiza las tarjetas de productos para reflejar el cambio de stock
 }
 
 function updateQuantity(productId, quantity) {
@@ -234,17 +268,3 @@ function updateQuantity(productId, quantity) {
     }
 }
 
-// // Event listeners para la búsqueda dinámica
-// inputSearch.addEventListener("input", filterProducts);
-// document.getElementById("priceMin").addEventListener("input", filterProducts);
-// document.getElementById("priceMax").addEventListener("input", filterProducts);
-
-// // Obtener todas las imágenes que representan marcas y añadirles un event listener
-// const brandImages = document.querySelectorAll('img[data-brand]');
-// brandImages.forEach(image => {
-//     image.addEventListener('click', function (event) {
-//         brandImages.forEach(img => img.classList.remove('selected')); // Elimina la clase 'selected' de todas las imágenes
-//         event.target.classList.add('selected'); // Añade la clase 'selected' a la imagen clickeada
-//         filterProducts(); // Filtra los productos con la marca seleccionada
-//     });
-// });
