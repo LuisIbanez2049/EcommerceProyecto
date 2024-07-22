@@ -11,120 +11,137 @@
     <link rel="icon" type="image/png" href="./assets/images/favicon.jpg">
 </head>
 
-<body>
-    <header>
-        <section class="nav flex items-center p-1 gap-2 justify-between">
-            <a href="#">
-                <img class="w-16 bg-white rounded-full border-white border-2 ml-10 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl "
-                    src="./assets/images/logo.gif" alt="logo"></a>
+<body class="w-screen">
+    <header class="bg-gray-800 text-white top-0 left-0 right-0 z-50">
+        <section class="nav flex flex-col sm:flex-row justify-between items-center p-4">
+            <div class="flex justify-between items-center w-full sm:w-auto">
+                <a id="menu" href="#" class="sm:hidden"></a>
 
-            <nav class="navLinks items-center text-white ml-20 flex gap-14">
-                <a href="#"
-                    class="btn current bg-[#000851] rounded-full shadow-2xl px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">HOME</a>
-
-                <a href="./pages/products.html"
-                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">PRODUCTS</a>
-
-                <a href="./pages/about.html"
-                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">ABOUT</a>
-
-                <a href="./pages/contact.html"
-                    class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">CONTACT</a>
-            </nav>
-
-            <div class="relative w-25 flex items-center mr-10">
-                <input type="text" placeholder="Search..." id="navSearchName" class="w-full px-4 py-2 rounded-full pl-10">
-                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-white pointer-events-none">
-                    <i class="fas fa-search text-gray-400"></i>
-                </span>
-                <a href="./pages/cart.html">
-                <i class="fa fa-shopping-cart text-white text-xl pl-3"></i>
-            </a>
+                <a href="#">
+                    <img class="w-16 bg-white rounded-full border-white border-2 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl"
+                        src="./assets/images/logo.gif" alt="logo">
+                </a>
             </div>
+
+            <nav class="navLinks w-full sm:w-auto sm:flex sm:items-center mt-4 sm:mt-0">
+                <ul class="navLinksList w-full sm:flex sm:space-x-6">
+                    <li><a href="#" class="btn current">HOME</a></li>
+                    <li><a href="./pages/products.html" class="btn">PRODUCTS</a></li>
+                    <li><a href="./pages/about.html" class="btn">ABOUT</a></li>
+                    <li><a href="./pages/contact.html" class="btn">CONTACT</a></li>
+                </ul>
+
+                <div class="relative w-full sm:w-1/3 flex items-center mt-4 sm:mt-0">
+                    <input type="text" placeholder="Search..." id="searchNameNav"
+                        class="w-full px-4 py-2 rounded-full pl-10 text-black">
+                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <a href="" class="text-white text-xl ml-3">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </nav>
         </section>
     </header>
-<main>
-    <div class="carousel">
-        <img class="carousel-image" src="./assets/images/Sin título.jpg" alt="Imagen 1 de carousel">
-        <img class="carousel-image" src="./assets/images/nueva.jpg" alt="Imagen 2 de carousel">
-        <img class="carousel-image" src="./assets/images/otra.jpg" alt="Imagen 3 de carousel">
-        <img class="carousel-image" src="./assets/images/programas-crear-banners.jpg" alt="Imagen 4 de carousel">
-    </div>
 
-    <section class="bg-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-gray-900">Welcome to Tech Store</h2>
-                <p class="mt-4 text-lg leading-6 text-gray-500">Explore our diverse range of cutting-edge technology products!</p>
-            </div>
-    
-            <!-- Card 1 -->
-            <div class="flex flex-col lg:flex-row items-center lg:items-start bg-white rounded-2xl shadow-lg mb-10">
-                <img class="w-full lg:w-1/2 object-cover rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none lg:mr-6"
-                     src="./assets/images/home/D_NQ_NP_846395-MLA71103296632_082023-F.webp" alt="cpu">
-                <div class="p-6 lg:w-1/2 bg-gray-50 rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Discover the Latest Innovations</h3>
-                    <p class="text-lg leading-relaxed text-gray-700">
-                        At Tech Store, we believe that the future is now. As a leading retailer of cutting-edge technology and
-                        electronics, we are dedicated to bringing you the latest and greatest innovations that the tech world
-                        has to offer. Whether you're a tech enthusiast, a professional in need of advanced tools, or simply
-                        looking for the perfect gadget to make your life easier, Tech Store is your one-stop shop for all things tech.
-                    </p>
-                </div>
-            </div>
-    
-            <!-- Card 2 -->
-            <div class="flex flex-col lg:flex-row items-center lg:items-start bg-white rounded-2xl shadow-lg mb-10">
-                <div class="p-6 lg:w-1/2 bg-gray-50 rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none lg:mr-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Explore Our Product Range</h3>
-                    <p class="text-lg leading-relaxed text-gray-700">
-                        From the latest smartphones and laptops to smart home devices and wearable technology, Tech Store has it all.
-                        Our extensive product range includes:
-                    </p>
-                    <ul class="list-disc pl-5 mt-4 text-gray-700">
-                        <li><strong>Smartphones and Tablets:</strong> Discover the newest models from top brands, featuring the latest technology and sleek designs.</li>
-                        <li><strong>Laptops and Computers:</strong> Whether you need a high-performance gaming laptop or a reliable business machine, we have a wide selection to suit every need.</li>
-                    </ul>
-                </div>
-                <img class="w-full lg:w-1/2 object-cover rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none"
-                     src="./assets/images/home/D_NQ_NP_671424-MLA71103302368_082023-F.webp" alt="cpu">
-            </div>
-    
-            <!-- Card 3 -->
-            <div class="flex flex-col lg:flex-row items-center lg:items-start bg-white rounded-2xl shadow-lg">
-                <img class="w-full lg:w-1/2 object-cover rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none lg:mr-6"
-                     src="./assets/images/home/D_NQ_NP_944139-MLA71103898874_082023-F.webp" alt="cpu">
-                <div class="p-6 lg:w-1/2 bg-gray-50 rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
-                    <p class="text-lg leading-relaxed text-gray-700">
-                        At Tech Store, we are more than just a retailer; we are a community of tech lovers who are passionate about
-                        innovation and excellence. Our team of knowledgeable and friendly staff is always here to help you find the perfect
-                        product and provide expert advice. We offer competitive pricing on all our products, ensuring that you
-                        get the best value for your money. We stock only the highest quality products from trusted brands, so you can shop with confidence.
-                    </p>
-                </div>
-            </div>
-    
-            <div class="flex justify-around mt-10 space-x-6">
-                <!-- Product Catalog Button -->
-                <div class="relative flex items-center justify-center w-80 h-40 text-center text-black border-2 border-white rounded-2xl shadow-lg">
-                    <img class="w-full h-full object-cover rounded-2xl"
-                         src="./assets/images/home/D_NQ_NP_878541-MLA71148477049_082023-F.webp" alt="products">
-                    <a class="absolute inset-0 flex items-center justify-center w-44 h-10 border-2 text-xl border-white text-white rounded-lg p-2 bg-cyan-600 hover:bg-blue-900"
-                       href="./pages/products.html">Product catalog!</a>
-                </div>
-    
-                <!-- Contact Us Button -->
-                <div class="relative flex items-center justify-center w-80 h-40 text-center text-black border-2 border-white rounded-2xl shadow-lg">
-                    <img class="w-full h-full object-cover rounded-2xl"
-                         src="./assets/images/home/D_NQ_NP_636528-MLA71149474761_082023-F.webp" alt="products">
-                    <a class="absolute inset-0 flex items-center justify-center w-44 h-10 border-2 text-xl border-white text-white rounded-lg p-2 bg-cyan-600 hover:bg-blue-900"
-                       href="./pages/contact.html">Contact us!</a>
-                </div>
-            </div>
+    <main>
+        <div class="carousel">
+            <img class="carousel-image" src="./assets/images/Sin título.jpg" alt="Imagen 1 de carousel">
+            <img class="carousel-image" src="./assets/images/home/D_NQ_NP_662498-MLA71109934542_082023-F.webp"
+                alt="Imagen 2 de carousel">
+            <img class="carousel-image" src="./assets/images/otra.jpg" alt="Imagen 3 de carousel">
+            <img class="carousel-image" src="./assets/images/programas-crear-banners.jpg" alt="Imagen 4 de carousel">
         </div>
-    </section>
-    
+
+        <section class="bg-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-extrabold text-gray-900">Welcome to Tech Store</h2>
+                    <p class="mt-4 text-lg leading-6 text-gray-500">Explore our diverse range of cutting-edge technology
+                        products!</p>
+                </div>
+
+                <!-- Card 1 -->
+                <div class="flex flex-col lg:flex-row items-center lg:items-start bg-white rounded-2xl shadow-lg mb-10">
+                    <img class="w-full lg:w-1/2 object-cover rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none lg:mr-6"
+                        src="./assets/images/home/D_NQ_NP_846395-MLA71103296632_082023-F.webp" alt="cpu">
+                    <div class="p-6 lg:w-1/2 bg-gray-50 rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Discover the Latest Innovations</h3>
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            At Tech Store, we believe that the future is now. As a leading retailer of cutting-edge
+                            technology and
+                            electronics, we are dedicated to bringing you the latest and greatest innovations that the
+                            tech world
+                            has to offer. Whether you're a tech enthusiast, a professional in need of advanced tools, or
+                            simply
+                            looking for the perfect gadget to make your life easier, Tech Store is your one-stop shop
+                            for all things tech.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flex flex-col lg:flex-row items-center lg:items-start bg-white rounded-2xl shadow-lg mb-10">
+                    <div class="p-6 lg:w-1/2 bg-gray-50 rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none lg:mr-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Explore Our Product Range</h3>
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            From the latest smartphones and laptops to smart home devices and wearable technology, Tech
+                            Store has it all.
+                            Our extensive product range includes:
+                        </p>
+                        <ul class="list-disc pl-5 mt-4 text-gray-700">
+                            <li><strong>Smartphones and Tablets:</strong> Discover the newest models from top brands,
+                                featuring the latest technology and sleek designs.</li>
+                            <li><strong>Laptops and Computers:</strong> Whether you need a high-performance gaming
+                                laptop or a reliable business machine, we have a wide selection to suit every need.</li>
+                        </ul>
+                    </div>
+                    <img class="w-full lg:w-1/2 object-cover rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none"
+                        src="./assets/images/home/D_NQ_NP_671424-MLA71103302368_082023-F.webp" alt="cpu">
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flex flex-col lg:flex-row items-center lg:items-start bg-white rounded-2xl shadow-lg">
+                    <img class="w-full lg:w-1/2 object-cover rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none lg:mr-6"
+                        src="./assets/images/home/D_NQ_NP_944139-MLA71103898874_082023-F.webp" alt="cpu">
+                    <div class="p-6 lg:w-1/2 bg-gray-50 rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            At Tech Store, we are more than just a retailer; we are a community of tech lovers who are
+                            passionate about
+                            innovation and excellence. Our team of knowledgeable and friendly staff is always here to
+                            help you find the perfect
+                            product and provide expert advice. We offer competitive pricing on all our products,
+                            ensuring that you
+                            get the best value for your money. We stock only the highest quality products from trusted
+                            brands, so you can shop with confidence.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-around mt-10 space-x-6">
+                    <!-- Product Catalog Button -->
+                    <div
+                        class="relative flex items-center justify-center w-80 h-40 text-center text-black border-2 border-white rounded-2xl shadow-lg">
+                        <img class="w-full h-full object-cover rounded-2xl"
+                            src="./assets/images/home/D_NQ_NP_878541-MLA71148477049_082023-F.webp" alt="products">
+                        <a class="absolute inset-0 flex items-center justify-center w-44 h-10 border-2 text-xl border-white text-white rounded-lg p-2 bg-cyan-600 hover:bg-blue-900"
+                            href="./pages/products.html">Product catalog!</a>
+                    </div>
+
+                    <!-- Contact Us Button -->
+                    <div
+                        class="relative flex items-center justify-center w-80 h-40 text-center text-black border-2 border-white rounded-2xl shadow-lg">
+                        <img class="w-full h-full object-cover rounded-2xl"
+                            src="./assets/images/home/D_NQ_NP_636528-MLA71149474761_082023-F.webp" alt="products">
+                        <a class="absolute inset-0 flex items-center justify-center w-44 h-10 border-2 text-xl border-white text-white rounded-lg p-2 bg-cyan-600 hover:bg-blue-900"
+                            href="./pages/contact.html">Contact us!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
     <footer class="flex flex-wrap justify-around pt-5 w-full">
         <div class="flex items-center justify-center w-[200px] h-[200px]">
