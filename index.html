@@ -11,29 +11,18 @@
     <link rel="icon" type="image/png" href="./assets/images/favicon.jpg">
 </head>
 
-<body>
+<body class="w-screen">
     <header class="bg-gray-800 text-white top-0 left-0 right-0 z-50">
         <section class="nav flex flex-col sm:flex-row justify-between items-center p-4">
             <div class="flex justify-between items-center w-full sm:w-auto">
                 <a id="menu" href="#" class="sm:hidden"></a>
-                
+
                 <a href="#">
                     <img class="w-16 bg-white rounded-full border-white border-2 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl"
                         src="./assets/images/logo.gif" alt="logo">
                 </a>
             </div>
-    
-            <div class="relative w-full sm:w-1/3 flex items-center mt-4 sm:mt-0">
-                <input type="text" placeholder="Search..." id="searchNameNav"
-                    class="w-full px-4 py-2 rounded-full pl-10 text-black">
-                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
-                    <i class="fas fa-search"></i>
-                </span>
-                <a href="" class="text-white text-xl ml-3">
-                    <i class="fa fa-shopping-cart"></i>
-                </a>
-            </div>
-            
+
             <nav class="navLinks w-full sm:w-auto sm:flex sm:items-center mt-4 sm:mt-0">
                 <ul class="navLinksList w-full sm:flex sm:space-x-6">
                     <li><a href="#" class="btn current">HOME</a></li>
@@ -41,14 +30,26 @@
                     <li><a href="./pages/about.html" class="btn">ABOUT</a></li>
                     <li><a href="./pages/contact.html" class="btn">CONTACT</a></li>
                 </ul>
+
+                <div class="relative w-full sm:w-1/3 flex items-center mt-4 sm:mt-0">
+                    <input type="text" placeholder="Search..." id="searchNameNav"
+                        class="w-full px-4 py-2 rounded-full pl-10 text-black">
+                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <a href="" class="text-white text-xl ml-3">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+                </div>
             </nav>
         </section>
     </header>
-    
+
     <main>
         <div class="carousel">
             <img class="carousel-image" src="./assets/images/Sin título.jpg" alt="Imagen 1 de carousel">
-            <img class="carousel-image" src="./assets/images/home/D_NQ_NP_662498-MLA71109934542_082023-F.webp" alt="Imagen 2 de carousel">
+            <img class="carousel-image" src="./assets/images/home/D_NQ_NP_662498-MLA71109934542_082023-F.webp"
+                alt="Imagen 2 de carousel">
             <img class="carousel-image" src="./assets/images/otra.jpg" alt="Imagen 3 de carousel">
             <img class="carousel-image" src="./assets/images/programas-crear-banners.jpg" alt="Imagen 4 de carousel">
         </div>
