@@ -7,13 +7,13 @@ setInterval(() => {
     carouselImages[currentImageIndex].style.opacity = '1';
 }, 5000);
 
-// const mainnav = document.querySelector('.navigation')
-// const hambutton = document.querySelector('#menu');
+const mainnav = document.querySelector('.navLinks')
+const hambutton = document.querySelector('#menu');
 
-// hambutton.addEventListener('click', () => {
-//     mainnav.classList.toggle('show');
-//     hambutton.classList.toggle('show');
-// }); 
+hambutton.addEventListener('click', () => {
+    mainnav.classList.toggle('show');
+    hambutton.classList.toggle('show');
+}); 
 
 let slideIndex = 0;
 function showSlides() {
@@ -38,3 +38,5 @@ showSlides();
 
 // Set interval for automatic slide movement
 setInterval(autoMoveSlides, 5000); // Change slide every 5 seconds
+
+

@@ -11,36 +11,41 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="icon" type="image/png" href="../assets/images/favicon.jpg">
 </head>
-<body class="bg-gray-100">
-  <header>
-    <section class="nav flex items-center p-1 gap-2 justify-between">
-        <a href="#">
-            <img class="w-16 bg-white rounded-full border-white border-2 ml-10 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl "
-                src="../assets/images/logo.gif" alt="logo"></a>
 
-        <nav class="navLinks items-center text-white ml-20 flex gap-14">
-            <a href="../index.html"
-                class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">HOME</a>
+<body class="w-screen">
+    <header class="bg-gray-800 text-white top-0 left-0 right-0 z-50">
+        <section class="nav flex flex-col sm:flex-row justify-between items-center p-4">
+            <div class="flex justify-between items-center w-full sm:w-auto">
+                <a id="menu" href="#" class="sm:hidden"></a>
+                
+                <a href="#">
+                    <img class="w-16 bg-white rounded-full border-white border-2 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl"
+                        src="../assets/images/logo.gif" alt="logo">
+                </a>
+            </div>
 
-            <a href="../pages/products.html"
-                class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">PRODUCTS</a>
-
-            <a href="#"
-                class="btn current bg-[#000851] rounded-full shadow-2xl px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">ABOUT</a>
-
-            <a href="../pages/contact.html"
-                class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">CONTACT</a>
-        </nav>
-
-        <div class="relative w-25 flex items-center mr-10">
-            <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-full pl-10">
-            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-white pointer-events-none">
-                <i class="fas fa-search text-gray-400"></i>
-            </span>
-            <i class="fa fa-shopping-cart text-white text-xl pl-3"></i>
-        </div>
-    </section>
-</header>
+            <nav class="navLinks w-full sm:w-auto sm:flex sm:items-center mt-4 sm:mt-0">
+                <ul class="navLinksList w-full sm:flex sm:space-x-6">
+                    <li><a href="../index.html" class="btn">HOME</a></li>
+                    <li><a href="./products.html" class="btn">PRODUCTS</a></li>
+                    <li><a href="./about.html" class="btn current">ABOUT</a></li>
+                    <li><a href="./contact.html" class="btn">CONTACT</a></li>
+                </ul>
+            </nav>
+    
+            <div class="relative w-full sm:w-1/3 flex items-center mt-4 sm:mt-0">
+                <input type="text" placeholder="Search..." id="navSearchName"
+                    class="w-full px-4 py-2 rounded-full pl-10 text-black">
+                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                    <i class="fas fa-search"></i>
+                </span>
+                <a href="./cart.html" class="text-white text-xl ml-3">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>
+            
+        </section>
+    </header>
 <main class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
@@ -82,40 +87,42 @@
         </div>
     </main>
 
-    <footer class="flex flex-wrap justify-around pt-5">
+    <footer class="flex flex-wrap justify-around pt-5 w-full">
         <div class="flex items-center justify-center w-[200px] h-[200px]">
             <img class=" logo w-36 h-36" src="../assets/images/footer/logo-techStore.gif" alt="logo techStore">
         </div>
-        <div class="flex flex-col gap-2 items-start">
-            <button>Categories</button>
-            <button>Notebooks</button>
-            <button>Assembled PC and Mini PC</button>
-            <button>PC Components</button>
-            <button>Combo Update and mother</button>
-            <button>Monitors</button>
-            <button>PC peripherals</button>
+        <div class="footerCategories gap-10">
+            <div class="flex flex-col gap-2 items-start">
+                <button>Categories</button>
+                <button>Notebooks</button>
+                <button>Assembled PC and Mini PC</button>
+                <button>PC Components</button>
+                <button>Combo Update and mother</button>
+                <button>Monitors</button>
+                <button>PC peripherals</button>
+            </div>
+            <div class="flex flex-col gap-2 items-start">
+                <button>Headphones</button>
+                <button>Microphones</button>
+            </div>
+            <div class="flex flex-col gap-2 items-start ">
+                <button>Links of interest</button>
+                <button>HyperX Zone</button>
+            </div>
         </div>
-        <div class="flex flex-col gap-2 items-start">
-            <button>Headphones</button>
-            <button>Microphones</button>
-        </div>
-        <div class="flex flex-col gap-2 items-start ">
-            <button>Links of interest</button>
-            <button>HyperX Zone</button>
-        </div>
-        <div>
+        <div class="flex flex-col gap-2 items-center justify-center">
             <div class="flex gap-2">
                 <img class="w-10 h-10" src="../assets/images/footer/logo-facebook.png" alt="logo facebook">
                 <img class="w-10 h-10" src="../assets/images/footer/logo-instagram.png" alt="logo instagram">
                 <img class="w-10 h-10" src="../assets/images/footer/logo-youtube.png" alt="logo youtube">
             </div>
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 items-center">
                 <p><a href="tel:+(011) 4551-7090">Tel: (011) 4551-7090</a></p>
                 <p><a href="mailto:info@techStore.com">info@techStore.com</a></p>
                 <p>Av. Forest 365 C.ABA Capital Federal</p>
             </div>
         </div>
-        <div class="flex flex-col w-11/12 h-16 mt-5">
+        <div class="endFooter flex-col w-11/12 h-16 mt-5">
             <div class="border-t-2 border-white flex justify-between w-full h-14">
                 <button>Powered by Mercado Shops</button>
                 <button>Legal notices</button>
@@ -124,13 +131,12 @@
                 <button>Protected purchase</button>
                 <button>Configure cookies</button>
                 <img class="w-10 h-14 pt-1" src="../assets/images/footer/logo-dataFiscal.jpg" alt="logo data fiscal">
-
             </div>
         </div>
 
     </footer>
 
-    <!-- <script src="../assets/js/nav.js"></script> -->
+    <script src="../assets/js/index.js"></script>
 </body>
 
 </html>

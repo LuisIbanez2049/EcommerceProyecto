@@ -11,32 +11,36 @@
     <title>Formulario</title>
 </head>
 
-<header>
-    <section class="nav flex items-center p-1 gap-2 justify-between">
-        <a href="#">
-            <img class="w-16 bg-white rounded-full border-white border-2 ml-10 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl "
-                src="../assets/images/logo.gif" alt="logo"></a>
+<body class="w-screen">
+    <header class="bg-gray-800 text-white top-0 left-0 right-0 z-50">
+        <section class="nav flex flex-col sm:flex-row justify-between items-center p-4">
+            <div class="flex justify-between items-center w-full sm:w-auto">
+                <a id="menu" href="#" class="sm:hidden"></a>
+            
+            <a href="#">
+                <img class="w-16 bg-white rounded-full border-white border-2 cursor-pointer hover:scale-110 transition duration-500 ease-in-out hover:shadow hover:shadow-blue-900 hover:shadow-2xl"
+                    src="../assets/images/logo.gif" alt="logo">
+            </a>
+        </div>
 
-        <nav class="navLinks items-center text-white ml-20 flex gap-14">
-            <a href="../index.html"
-                class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">HOME</a>
-
-            <a href="../pages/products.html"
-                class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">PRODUCTS</a>
-
-            <a href="../pages/about.html"
-                class="btn px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">ABOUT</a>
-
-            <a href="#"
-                class="btn current bg-[#000851] rounded-full shadow-2xl px-4 py-2 text-white font-bold hover:text-blue-500 transition duration-500 ease-in-out text-xl">CONTACT</a>
+        <nav class="navLinks w-full sm:w-auto sm:flex sm:items-center mt-4 sm:mt-0">
+            <ul class="navLinksList w-full sm:flex sm:space-x-6">
+                <li><a href="../index.html" class="btn">HOME</a></li>
+                <li><a href="./products.html" class="btn">PRODUCTS</a></li>
+                <li><a href="./about.html" class="btn">ABOUT</a></li>
+                <li><a href="#" class="btn current">CONTACT</a></li>
+            </ul>
         </nav>
 
-        <div class="relative w-25 flex items-center mr-10">
-            <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-full pl-10">
-            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-white pointer-events-none">
-                <i class="fas fa-search text-gray-400"></i>
+        <div class="relative w-full sm:w-1/3 flex items-center mt-4 sm:mt-0">
+            <input type="text" placeholder="Search..." id="navSearchName"
+                class="w-full px-4 py-2 rounded-full pl-10 text-black">
+            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                <i class="fas fa-search"></i>
             </span>
-            <i class="fa fa-shopping-cart text-white text-xl pl-3"></i>
+            <a href="./cart.html" class="text-white text-xl ml-3">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
         </div>
     </section>
 </header>
@@ -49,70 +53,91 @@
         <img class="carousel-image" src="../assets/images/programas-crear-banners.jpg" alt="Imagen 4 de carousel">
     </div>
 
-    <main>
-        <div data-contenedorFormulario="" class="border border-black   w-full flex flex-row justify-center">
-            <form data-contenedorFrom=""
-                class="flex flex-col justify-center w-[60%] p-[30px] h-[890px] border border-black">
-                <h1 data-h1="" class="text-center text-[53px] font-bold text-black">Formulario de Contacto</h1>
-                <label for="nombre">Nombre:</label>
-                <input class="inputs" type="text" id="nombre" name="nombre" required>
+    <main class="bg-gray-100 p-8 mx-auto max-w-7xl rounded shadow-lg mb-12">
+        <div class="w-full flex flex-col items-center justify-center">
+            <div class="text-center mb-10">
+                <h1 class="text-5xl font-bold text-black mb-4">Contact Form</h1>
+                <p class="text-lg text-gray-600">We'd love to hear from you. Please fill out the form below, and we'll get in touch with you as soon as possible.</p>
+            </div>
 
-                <label for="apellido">Apellido:</label>
-                <input class="inputs" type="text" id="apellido" name="apellido" required>
+            <form class="w-full max-w-4xl p-8 bg-gray-200 border border-gray-300 rounded shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="firstName" class="block text-lg font-semibold mb-2">First Name:</label>
+                        <input class="inputs w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
+                            type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div>
+                        <label for="lastName" class="block text-lg font-semibold mb-2">Last Name:</label>
+                        <input class="inputs w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
+                            type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
 
-                <label for="email">Email:</label>
-                <input class="inputs" type="email" id="email" name="email" required>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="email" class="block text-lg font-semibold mb-2">Email:</label>
+                        <input class="inputs w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
+                            type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-lg font-semibold mb-2">Phone:</label>
+                        <input class="inputs w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
+                            type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
 
-                <label for="telefono">Teléfono:</label>
-                <input class="inputs" type="tel" id="telefono" name="telefono" required>
-
-                <label for="comentario">Comentario:</label>
-                <textarea class="h-[180px] bg-[#c9c9c9] mb-[20px] rounded-[30px] pl-[20px] pt-[10px] text-[18px]"
-                    id="comentario" name="comentario" maxlength="200"
-                    placeholder="Puedes escribir como maximo 200 caracteres..." required></textarea>
+                <div class="mb-6">
+                    <label for="comment" class="block text-lg font-semibold mb-2">Comment:</label>
+                    <textarea class="w-full p-3 h-40 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
+                        id="comment" name="comment" maxlength="200" placeholder="You can write up to 200 characters..."
+                        required></textarea>
+                </div>
 
                 <div class="w-full flex flex-row justify-center">
-                    <button class="text-[40px] border border-black rounded-[30px] w-[160px] bg-[#77dd77]"
-                        type="submit">Enviar</button>
+                    <button id="botonEnviar" class="text-lg font-semibold bg-gradient-to-r from-[#000851] to-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-600 transition duration-300"
+                        type="submit">Submit</button>
                 </div>
             </form>
         </div>
     </main>
 
-    <footer class="flex flex-wrap justify-around pt-5">
+    <footer class="flex flex-wrap justify-around pt-5 w-full">
         <div class="flex items-center justify-center w-[200px] h-[200px]">
             <img class=" logo w-36 h-36" src="../assets/images/footer/logo-techStore.gif" alt="logo techStore">
         </div>
-        <div class="flex flex-col gap-2 items-start">
-            <button>Categories</button>
-            <button>Notebooks</button>
-            <button>Assembled PC and Mini PC</button>
-            <button>PC Components</button>
-            <button>Combo Update and mother</button>
-            <button>Monitors</button>
-            <button>PC peripherals</button>
+        <div class="footerCategories gap-10">
+            <div class="flex flex-col gap-2 items-start">
+                <button>Categories</button>
+                <button>Notebooks</button>
+                <button>Assembled PC and Mini PC</button>
+                <button>PC Components</button>
+                <button>Combo Update and mother</button>
+                <button>Monitors</button>
+                <button>PC peripherals</button>
+            </div>
+            <div class="flex flex-col gap-2 items-start">
+                <button>Headphones</button>
+                <button>Microphones</button>
+            </div>
+            <div class="flex flex-col gap-2 items-start ">
+                <button>Links of interest</button>
+                <button>HyperX Zone</button>
+            </div>
         </div>
-        <div class="flex flex-col gap-2 items-start">
-            <button>Headphones</button>
-            <button>Microphones</button>
-        </div>
-        <div class="flex flex-col gap-2 items-start ">
-            <button>Links of interest</button>
-            <button>HyperX Zone</button>
-        </div>
-        <div>
+        <div class="flex flex-col gap-2 items-center justify-center">
             <div class="flex gap-2">
                 <img class="w-10 h-10" src="../assets/images/footer/logo-facebook.png" alt="logo facebook">
                 <img class="w-10 h-10" src="../assets/images/footer/logo-instagram.png" alt="logo instagram">
                 <img class="w-10 h-10" src="../assets/images/footer/logo-youtube.png" alt="logo youtube">
             </div>
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 items-center">
                 <p><a href="tel:+(011) 4551-7090">Tel: (011) 4551-7090</a></p>
                 <p><a href="mailto:info@techStore.com">info@techStore.com</a></p>
                 <p>Av. Forest 365 C.ABA Capital Federal</p>
             </div>
         </div>
-        <div class="flex flex-col w-11/12 h-16 mt-5">
+        <div class="endFooter flex-col w-11/12 h-16 mt-5">
             <div class="border-t-2 border-white flex justify-between w-full h-14">
                 <button>Powered by Mercado Shops</button>
                 <button>Legal notices</button>
@@ -121,12 +146,13 @@
                 <button>Protected purchase</button>
                 <button>Configure cookies</button>
                 <img class="w-10 h-14 pt-1" src="../assets/images/footer/logo-dataFiscal.jpg" alt="logo data fiscal">
-
             </div>
         </div>
 
     </footer>
+    <script src="../assets/js/contact.js"></script>
     <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/contact.js"></script>
 </body>
 
 </html>
